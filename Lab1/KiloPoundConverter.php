@@ -20,11 +20,11 @@
 		    }
 		    elseif (isset($_POST['ConverttoKilos']))
 		    {
-		    	$poundsResult = $_POST['pound'];
+		    	$poundsResult = $_POST['pounds'];
 		    
 		    	$kilosResult = $poundsResult / 2.2;
 		    	
-		    	echo "<p>" + $poundsResult + " pounds equals " + $kilosResult + " kilos.</p>";
+		    	echo "<p> $poundsResult pounds equals $kilosResult kilos.</p>";
 		    }
 		    else
 		    {
