@@ -7,6 +7,10 @@
 <body>
     <?php
         // enter code here
+      $message = "hello";
+      $name = "Scott";
+
+      echo "<h1>$message $name</h1>";
     ?>
 </body>
 </html>
