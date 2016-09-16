@@ -51,6 +51,29 @@
         }
         echo"Blast Off</p>";
 
+        echo "<h3>Step 6</h3>";   //step 6
+
+        $colours = array("Blue", "Purple", "Green", "Yellow", "Orange", "Red", "Teal");
+
+        echo "<h5>a</h5>";
+
+        for($colourCounter=0; $colourCounter < count($colours);$colourCounter++)
+        {
+            echo "<p>$colours[$colourCounter].</p>";
+        }
+
+        echo "<h5>b</h5>";
+
+        foreach ($colours as $colour)
+        {
+            echo "<p>$colour</p>";
+        }
+
+        echo "<h5>c</h5>";
+
+        echo "<pre>";
+        print_r($colours);
+        echo "</pre>";
 
     ?>
 
