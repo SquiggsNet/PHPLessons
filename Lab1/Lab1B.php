@@ -14,5 +14,11 @@
     <?php
         echo "<h3>Inserted another tag!</h3>";
     ?>
+
+    <?php
+        $name = "Scott Rafael";
+        echo "My name is $name";
+    ?>
+
 </body>
 </html>
