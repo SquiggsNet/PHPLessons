@@ -42,7 +42,16 @@
         echo "<p>Message by Reference: ";
         justAddBlahReference($message);
         echo "$message</p>";
-
+    ?>
+    <h3>Step: 3</h3>
+    <?php
+        $ageGlobalVar = 30;
+        function ageDisplayGlobal()
+        {
+            global $ageGlobalVar;
+            echo "<h1>You are $ageGlobalVar years old.</h1>";
+        }
+        ageDisplayGlobal();
     ?>
 </body>
 </html>
