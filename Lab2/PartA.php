@@ -31,9 +31,9 @@
         {
             $passByValue = "$passByValue...blah";
         }
-        function justAddBlahReference($passByReference)
+        function justAddBlahReference(&$passByReference)
         {
-            $passByValue = "$passByReference...blah";
+            $passByReference = "$passByReference...blah";
         }
         echo "<p>Default Message: $message</p>";
         echo "<p>Message by value: ";
