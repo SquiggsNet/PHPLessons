@@ -7,10 +7,10 @@
             table, th, td, tr{
                 border: 1px solid black;
             }
-            .grey tr{
+            .grey td, th{
                 background: grey;
             }
-            .white tr{
+            .white td{
                 background: white;
             }
         </style>
@@ -39,19 +39,18 @@
                         {
                             ?>
                             <tr class="white">
-                                <td><?php echo $celsuis ?></td>
-                                <td><?php echo $fahrenheit ?></td>
-                            </tr>
                             <?php
                         }else
                         {
                             ?>
                             <tr class="grey">
-                                <td><?php echo $celsuis ?></td>
-                                <td><?php echo $fahrenheit ?></td>
-                            </tr>
                             <?php
                         }
+                        ?>
+                            <td><?php echo $celsuis ?></td>
+                            <td><?php echo $fahrenheit ?></td>
+                            </tr>
+                        <?php
                     }//end of for loop for row repeat
                 ?>
             </tbody>
