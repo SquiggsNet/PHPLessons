@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>New PHP Page</title>
+        <title>Fahrenheit Conversions</title>
         <style type="text/css">
             table, th, td, tr{
                 border: 1px solid black;
@@ -10,6 +10,7 @@
         </style>
     </head>
     <body>
+        <a href="CelsiusConversion.php">Celsius converted</a>
         <table>
             <thead>
                 <tr>
