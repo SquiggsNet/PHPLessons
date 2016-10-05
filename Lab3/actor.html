@@ -3,8 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Lab 3 - Actor</title>
+    <script src="validForm.js" type="text/javascript"></script>
 </head>
 <body>
-
+    <form id="insertActor" name="insertActor" action="actor.php"  method="post" onsubmit="return validForm()">
+        <p>
+            <label>First Name:
+                <input name="firstName" id="firstName" type="text"/>
+            </label>
+        </p>
+        <p>
+            <label>Last Name:
+                <input name="lastName" id="lastName" type="text"/>
+            </label>
+        </p>
+        <p>
+            <input type="submit" name="Submit Search"/>
+        </p>
+    </form>
+    <p><a href="films.php">List Movies</a></p>
+    <p><a href="films.html">Search Films</a></p>
+    <p><a href="actor.html">Record new actor</a></p>
 </body>
 </html>
+
+
+
+

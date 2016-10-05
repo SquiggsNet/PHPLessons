@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lab 3 - Part A</title>
+    <title>Lab 3 - Films</title>
     <style type="text/css">
         table, th, td{
             border: 4px solid indigo;
@@ -49,6 +49,8 @@
         ?>
         </tbody>
     </table>
-    <p><a href="films.html">Back to Search</a></p>
+    <p><a href="films.php">List Movies</a></p>
+    <p><a href="films.html">Search Films</a></p>
+    <p><a href="actor.html">Record new actor</a></p>
 </body>
 </html>
