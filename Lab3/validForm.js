@@ -1,5 +1,5 @@
 function validForm(){
-    var blue = document.forms["createUser"].acceptTermsConditions.checked;
+    //var blue = document.forms["createUser"].acceptTermsConditions.checked;
     if (document.forms["createUser"].firstName.value.length ==0){
         document.forms["createUser"].firstName.style.border = "1px solid red";
         return false;

@@ -74,9 +74,9 @@
                 <input type="submit" name="Delete"/>
             </p>
         </form>
-        <p><a href="actor.php">Actors</a></p>
         <p><a href="films.php">List Movies</a></p>
         <p><a href="films.html">Search Films</a></p>
+        <p><a href="actor.php">Actors</a></p>
         <p><a href="actor.html">Record new actor</a></p>
     </body>
 </html>
