@@ -7,7 +7,11 @@
             table, th, td{
                 border: 1px solid indigo;
             }
+            button{
+                font-size: 25px;
+            }
         </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     </head>
     <body>
         <?php
@@ -51,13 +55,18 @@
                 </label>
             </p>
             <p>
-                <input type="submit" name="submitSearch"/>
+                <input type="submit" name="submitSearch" value="Search"/>
+            </p>
+        </form>
+        <form id="newEmployee" name="newEmployee" action="newEmployeeForm.html"  method="post">
+            <p>
+                <input type="submit" name="newEmployee" value="New Employee"/>
             </p>
         </form>
         <form id="navigate" name="navigate" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="POST">
-            <button type="submit" name="navigate" value="begining">|<<</button>
-            <button type="submit" name="navigate" value="previous"><</button>
-            <button type="submit" name="navigate" value="next">></button>
+            <button type="submit" name="navigate" value="begining"><i class="fa fa-arrow-circle-left"></i></button>
+            <button type="submit" name="navigate" value="previous"><i class="fa fa-arrow-circle-o-left"></i></button>
+            <button type="submit" name="navigate" value="next"><i class="fa fa-arrow-circle-o-right"></i></button>
             <input type="hidden" name="navSize" value="<?php echo $incrementSize; ?>" />
             <input type="hidden" name="navLoc" value="<?php echo $incrementLocation; ?>" />
             <input type="hidden" name="search"  value="<?php echo $userSearch ?>" />
@@ -102,6 +111,8 @@
                     echo "<td>" . $row['last_name'] . "</td>";
                     echo "<td>" . $row['gender'] . "</td>";
                     echo "<td>" . $row['hire_date'] . "</td>";
+                    echo "<td><button type='submit' name='updateEmployee' value='updateEmployee'><i class='fa fa-pencil-square-o'></i></button></td>";
+                    echo "<td><button type='submit' name='deleteEmployee' value='deleteEmployee'><i class='	fa fa-remove'></i></button></td>";
                     echo "</tr>";
                 }
                 mysqli_close($db);
