@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c98d3ce1-a22c-4961-85fb-f98d91fd3586" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/newEmployeeForm.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/validForm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createNewEmployee.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/updateEmployeeForm.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/employeeView.php" afterPath="$PROJECT_DIR$/employeeView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newEmployeeForm.html" afterPath="$PROJECT_DIR$/newEmployeeForm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validForm.js" afterPath="$PROJECT_DIR$/validForm.js" />
     </list>
     <ignored path="Ass1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,51 +29,77 @@
     <favorites_list name="Ass1" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="employeeView.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/employeeView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="66" column="77" selection-start-line="66" selection-start-column="77" selection-end-line="66" selection-end-column="100" />
-              <folding>
-                <marker date="1475970891425" expanded="true" signature="3148:4233" ph="..." />
-                <marker date="1475970891425" expanded="true" signature="3168:3467" ph="..." />
-                <marker date="1475970891425" expanded="true" signature="3189:3446" ph="..." />
-                <marker date="1475970891425" expanded="true" signature="3483:4233" ph="..." />
-                <marker date="1475970891425" expanded="true" signature="3767:3793" ph="SELECT * FRO... employees" />
-                <marker date="1475970891425" expanded="true" signature="3767:3807" ph="SELECT * FRO... employees" />
-                <marker date="1475970891425" expanded="true" signature="4004:4054" ph="SELECT * FRO... employees" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newEmployeeForm.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/newEmployeeForm.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="117" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="validForm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/validForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.8104869">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="employeeView.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/employeeView.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="430">
+                  <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+                  <folding>
+                    <marker date="1476220036175" expanded="true" signature="3672:3793" ph="SELECT * FRO... employees" />
+                    <marker date="1476220036175" expanded="true" signature="4004:4054" ph="SELECT * FRO... employees" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="validForm.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/validForm.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="390">
+                  <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="updateEmployeeForm.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/updateEmployeeForm.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="createNewEmployee.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/createNewEmployee.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="400">
+                  <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+                  <folding>
+                    <marker date="1476222709197" expanded="true" signature="739:890" ph="INSERT INTO actor... " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="newEmployeeForm.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/newEmployeeForm.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="83">
+                  <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -83,8 +110,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/dbConnect.php" />
-        <option value="$PROJECT_DIR$/newEmployeeForm.html" />
         <option value="$PROJECT_DIR$/employeeView.php" />
+        <option value="$PROJECT_DIR$/createNewEmployee.php" />
+        <option value="$PROJECT_DIR$/newEmployeeForm.html" />
+        <option value="$PROJECT_DIR$/validForm.js" />
       </list>
     </option>
   </component>
@@ -104,8 +133,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7" />
   <component name="ProjectFrameBounds">
     <option name="y" value="28" />
-    <option name="width" value="1280" />
-    <option name="height" value="706" />
+    <option name="width" value="1513" />
+    <option name="height" value="1018" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -223,8 +252,12 @@
     <configuration default="false" name="BI" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8080">
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" host="BI" port="8080">
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="PHP Built-in Web Server.BI" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Built-in Web Server.Unnamed" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -238,7 +271,10 @@
       <option name="presentableId" value="Default" />
       <updated>1475871550579</updated>
       <workItem from="1475871552350" duration="4364000" />
-      <workItem from="1475961976904" duration="9506000" />
+      <workItem from="1475961976904" duration="9529000" />
+      <workItem from="1476218878305" duration="4383000" />
+      <workItem from="1476223956053" duration="285000" />
+      <workItem from="1476224262247" duration="8374000" />
     </task>
     <task id="LOCAL-00001" summary="Ass1&#10;Req 1-3 complete">
       <created>1475968197786</created>
@@ -247,26 +283,33 @@
       <option name="project" value="LOCAL" />
       <updated>1475968197786</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ass1&#10;Req 1-3 complete rev 2">
+      <created>1476049672189</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1476049672189</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13870000" />
+    <option name="totallyTimeSpent" value="26935000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="28" width="1280" height="706" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="28" width="1513" height="1018" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20266041" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24619457" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32246998" sideWeight="0.5031299" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32178771" sideWeight="0.5109199" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4904037" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32246998" sideWeight="0.4968701" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32178771" sideWeight="0.48908007" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -290,39 +333,131 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ass1&#10;Req 1-3 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ass1&#10;Req 1-3 complete" />
+    <MESSAGE value="Ass1&#10;Req 1-3 complete rev 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ass1&#10;Req 1-3 complete rev 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/employeeView.php</url>
-          <line>17</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/employeeView.php</url>
-          <line>90</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/employeeView.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+          <folding>
+            <marker date="1476220036175" expanded="true" signature="3672:3793" ph="SELECT * FRO... employees" />
+            <marker date="1476220036175" expanded="true" signature="4004:4054" ph="SELECT * FRO... employees" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newEmployeeForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createNewEmployee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+          <folding>
+            <marker date="1476222709197" expanded="true" signature="739:890" ph="INSERT INTO actor... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/employeeView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+          <folding>
+            <marker date="1476220036175" expanded="true" signature="3672:3793" ph="SELECT * FRO... employees" />
+            <marker date="1476220036175" expanded="true" signature="4004:4054" ph="SELECT * FRO... employees" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newEmployeeForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/share/phpMyAdmin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createNewEmployee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+          <folding>
+            <marker date="1476222709197" expanded="true" signature="739:890" ph="INSERT INTO actor... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/employeeView.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1475970891425" expanded="true" signature="3148:4233" ph="..." />
-            <marker date="1475970891425" expanded="true" signature="3168:3467" ph="..." />
-            <marker date="1475970891425" expanded="true" signature="3189:3446" ph="..." />
-            <marker date="1475970891425" expanded="true" signature="3483:4233" ph="..." />
-            <marker date="1475970891425" expanded="true" signature="3767:3793" ph="SELECT * FRO... employees" />
-            <marker date="1475970891425" expanded="true" signature="3767:3807" ph="SELECT * FRO... employees" />
-            <marker date="1475970891425" expanded="true" signature="4004:4054" ph="SELECT * FRO... employees" />
+            <marker date="1476220036175" expanded="true" signature="3672:3793" ph="SELECT * FRO... employees" />
+            <marker date="1476220036175" expanded="true" signature="4004:4054" ph="SELECT * FRO... employees" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newEmployeeForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/employeeView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1476220036175" expanded="true" signature="3672:3793" ph="SELECT * FRO... employees" />
+            <marker date="1476220036175" expanded="true" signature="4004:4054" ph="SELECT * FRO... employees" />
           </folding>
         </state>
       </provider>
@@ -335,27 +470,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/share/phpMyAdmin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1466655551000" expanded="true" signature="3953:3980" ph="..." />
-            <marker date="1466655551000" expanded="true" signature="16375:16381" ph=" " />
-            <marker date="1466655551000" expanded="true" signature="16381:16387" ph=" " />
-            <marker date="1466655551000" expanded="true" signature="16387:16393" ph=" " />
-            <marker date="1466655551000" expanded="true" signature="16393:16399" ph=" " />
-            <marker date="1466655551000" expanded="true" signature="16399:16405" ph=" " />
-            <marker date="1466655551000" expanded="true" signature="16405:16411" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/share/phpMyAdmin/phpmyadmin.css.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -363,7 +481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -371,7 +488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -379,10 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <marker date="1466655551000" expanded="true" signature="27582:27609" ph="..." />
-            <marker date="1466655551000" expanded="true" signature="27722:27749" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -390,7 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -406,39 +517,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/share/phpMyAdmin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createNewEmployee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+          <folding>
+            <marker date="1476222709197" expanded="true" signature="739:890" ph="INSERT INTO actor... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/employeeView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+          <folding>
+            <marker date="1476220036175" expanded="true" signature="3672:3793" ph="SELECT * FRO... employees" />
+            <marker date="1476220036175" expanded="true" signature="4004:4054" ph="SELECT * FRO... employees" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newEmployeeForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/validForm.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updateEmployeeForm.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newEmployeeForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/employeeView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="66" column="77" selection-start-line="66" selection-start-column="77" selection-end-line="66" selection-end-column="100" />
-          <folding>
-            <marker date="1475970891425" expanded="true" signature="3148:4233" ph="..." />
-            <marker date="1475970891425" expanded="true" signature="3168:3467" ph="..." />
-            <marker date="1475970891425" expanded="true" signature="3189:3446" ph="..." />
-            <marker date="1475970891425" expanded="true" signature="3483:4233" ph="..." />
-            <marker date="1475970891425" expanded="true" signature="3767:3793" ph="SELECT * FRO... employees" />
-            <marker date="1475970891425" expanded="true" signature="3767:3807" ph="SELECT * FRO... employees" />
-            <marker date="1475970891425" expanded="true" signature="4004:4054" ph="SELECT * FRO... employees" />
-          </folding>
         </state>
       </provider>
     </entry>
