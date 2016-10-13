@@ -1,28 +1,28 @@
 function validForm(){
-    if (document.forms["createNewEmployee"].firstName.value.length ==0
-    || !validName(document.forms["createNewEmployee"].firstName.value,"You must a proper name, beginning with a capital letter."))
+    if (document.forms["employeeForm"].firstName.value.length ==0
+    || !validName(document.forms["employeeForm"].firstName.value,"You must a proper name, beginning with a capital letter."))
     {
-        document.forms["createNewEmployee"].firstName.style.border = "1px solid red";
+        document.forms["employeeForm"].firstName.style.border = "1px solid red";
         return false;
-    }else if (document.forms["createNewEmployee"].lastName.value.length ==0
-    || !validName(document.forms["createNewEmployee"].lastName.value,"You must a proper name, beginning with a capital letter."))
+    }else if (document.forms["employeeForm"].lastName.value.length ==0
+    || !validName(document.forms["employeeForm"].lastName.value,"You must a proper name, beginning with a capital letter."))
     {
-        document.forms["createNewEmployee"].lastName.style.border = "1px solid red";
+        document.forms["employeeForm"].lastName.style.border = "1px solid red";
         return false;
-    }else if (document.forms["createNewEmployee"].birthDate.value.length ==0
-    || !validDate(document.forms["createNewEmployee"].birthDate.value,"You must enter a valid date YYYY-MM-DD."))
+    }else if (document.forms["employeeForm"].birthDate.value.length ==0
+    || !validDate(document.forms["employeeForm"].birthDate.value,"You must enter a valid date YYYY-MM-DD."))
     {
-        document.forms["createNewEmployee"].birthDate.style.border = "1px solid red";
+        document.forms["employeeForm"].birthDate.style.border = "1px solid red";
         return false;
-    }else if (document.forms["createNewEmployee"].gender.value.length ==0
-    || !validGender(document.forms["createNewEmployee"].gender.value,"You must enter a valid gender, capital  M or F."))
+    }else if (document.forms["employeeForm"].gender.value.length ==0
+    || !validGender(document.forms["employeeForm"].gender.value,"You must enter a valid gender, capital  M or F."))
     {
-        document.forms["createNewEmployee"].gender.style.border = "1px solid red";
+        document.forms["employeeForm"].gender.style.border = "1px solid red";
         return false;
-    }else if (document.forms["createNewEmployee"].hireDate.value.length ==0
-    || !validDate(document.forms["createNewEmployee"].hireDate.value,"You must enter a valid date YYYY-MM-DD."))
+    }else if (document.forms["employeeForm"].hireDate.value.length ==0
+    || !validDate(document.forms["employeeForm"].hireDate.value,"You must enter a valid date YYYY-MM-DD."))
     {
-        document.forms["createNewEmployee"].hireDate.style.border = "1px solid red";
+        document.forms["employeeForm"].hireDate.style.border = "1px solid red";
         return false;
     }
     return true;
@@ -60,7 +60,7 @@ function validDate(userInput,alertText)
 
 function validGender(userInput,alertText)
 {
-    var myRegExp = new RegExp(/M|F/);
+    var myRegExp = new RegExp(/\b[MF]\b/);
 
     if(myRegExp.test(userInput))
     {

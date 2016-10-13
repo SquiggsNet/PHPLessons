@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lab 3 - Actor</title>
+    <title>Create New Employee</title>
     <style type="text/css">
         table, th, td{
             border: 1px solid red;
@@ -14,8 +14,8 @@
     require_once 'dbConnect.php';
     $db = connectToDB();
 
-    if(!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['lastName'])
-        && !empty($_POST['lastName']) && !empty($_POST['lastName'])) {
+    if(!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['birthDate'])
+        && !empty($_POST['gender']) && !empty($_POST['hireDate'])) {
 
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
@@ -29,7 +29,7 @@
         if (!$result) {
             die("Query error: " . mysqli_error($db));
         }else{
-            echo "<p>Successfully deleted" . mysqli_affected_rows($db) . " employee(s).</p>";
+            echo "<p>Successfully created " . mysqli_affected_rows($db) . " employee(s).</p>";
         }
     }
     mysqli_close($db);

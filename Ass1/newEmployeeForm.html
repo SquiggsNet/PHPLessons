@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lab 3 - Part C</title>
+    <title>Create New Employee</title>
     <script src="validForm.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
-<form id="createNewEmployee" name="createNewEmployee" action="createNewEmployee.php"  method="post" onsubmit="return validForm()">
+<form id="employeeForm" name="employeeForm" action="createNewEmployee.php"  method="post" onsubmit="return validForm()">
     <p>
         <label>First Name
             <input name="firstName" id="firstName" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/>
