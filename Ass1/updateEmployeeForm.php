@@ -1,3 +1,7 @@
+<?php
+require 'isLoggedIn.php';
+checkIfLoggedIn();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,6 +58,10 @@
     <p>
         <input type="submit" name="epdateEmployeeFormSubmit" value="Update Employee"/>
     </p>
+</form>
+<p><a href="employeeView.php">List Employees</a></p>
+<form name="logOut" action="logOut.php" method="POST">
+    <input type="submit" name="logOutButton" value="Log Out" />
 </form>
 </body>
 </html>

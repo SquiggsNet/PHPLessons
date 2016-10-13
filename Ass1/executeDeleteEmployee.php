@@ -1,3 +1,7 @@
+<?php
+require 'isLoggedIn.php';
+checkIfLoggedIn();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,5 +27,8 @@ if (!empty($_POST['deleteEmployeeID'])){
 mysqli_close($db);
 ?>
 <p><a href="employeeView.php">List Employees</a></p>
+<form name="logOut" action="logOut.php" method="POST">
+    <input type="submit" name="logOutButton" value="Log Out" />
+</form>
 </body>
 </html>

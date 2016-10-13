@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+require 'isLoggedIn.php';
+checkIfLoggedIn();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,5 +36,8 @@ if(!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['b
 mysqli_close($db);
 ?>
 <p><a href="employeeView.php">List Employees</a></p>
+<form name="logOut" action="logOut.php" method="POST">
+    <input type="submit" name="logOutButton" value="Log Out" />
+</form>
 </body>
 </html>

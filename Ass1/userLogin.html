@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <script src="validForm.js" type="text/javascript"></script>
+</head>
+<body>
+<h1>User Login</h1>
+<form id="userLogin" name="userLogin" action="validLogin.php"  method="post">
+    <p>
+        <label>User Name:
+            <input name="loginName" id="loginName" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/>
+        </label>
+    </p>
+    <p>
+        <label>Password
+            <input name="loginPwd" id="loginPwd" type="password" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/>
+        </label>
+    </p>
+
+    <p>
+        <input type="submit" name="submit" value="Login"/>
+    </p>
+</form>
+</body>
+</html>
