@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c98d3ce1-a22c-4961-85fb-f98d91fd3586" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/isLoggedIn.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logOut.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userLogin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/validLogin.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/newEmployeeForm.html" afterPath="$PROJECT_DIR$/newEmployeeForm.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createNewEmployee.php" afterPath="$PROJECT_DIR$/createNewEmployee.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/employeeView.php" afterPath="$PROJECT_DIR$/employeeView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/executeDeleteEmployee.php" afterPath="$PROJECT_DIR$/executeDeleteEmployee.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/executeEmployeeUpdate.php" afterPath="$PROJECT_DIR$/executeEmployeeUpdate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/updateEmployeeForm.php" afterPath="$PROJECT_DIR$/updateEmployeeForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validLogin.php" afterPath="$PROJECT_DIR$/validLogin.php" />
     </list>
     <ignored path="Ass1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,12 +43,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logOut.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="logOut.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logOut.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validLogin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/validLogin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
+              <folding>
+                <marker date="1476401015836" expanded="true" signature="437:484" ph="SELECT * FRO... users" />
+                <marker date="1476401015836" expanded="true" signature="437:510" ph="SELECT * FRO... users" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,7 +87,6 @@
         <option value="$PROJECT_DIR$/newEmployeeForm.html" />
         <option value="$PROJECT_DIR$/userLogin.html" />
         <option value="$PROJECT_DIR$/isLoggedIn.php" />
-        <option value="$PROJECT_DIR$/validLogin.php" />
         <option value="$PROJECT_DIR$/employeeView.php" />
         <option value="$PROJECT_DIR$/createNewEmployee.php" />
         <option value="$PROJECT_DIR$/executeEmployeeUpdate.php" />
@@ -91,6 +94,7 @@
         <option value="$PROJECT_DIR$/updateEmployeeForm.php" />
         <option value="$PROJECT_DIR$/newEmployeeForm.php" />
         <option value="$PROJECT_DIR$/logOut.php" />
+        <option value="$PROJECT_DIR$/validLogin.php" />
       </list>
     </option>
   </component>
@@ -253,7 +257,7 @@
       <workItem from="1476218878305" duration="4383000" />
       <workItem from="1476223956053" duration="285000" />
       <workItem from="1476224262247" duration="29810000" />
-      <workItem from="1476374206058" duration="12976000" />
+      <workItem from="1476374206058" duration="14550000" />
     </task>
     <task id="LOCAL-00001" summary="Ass1&#10;Req 1-3 complete">
       <created>1475968197786</created>
@@ -283,11 +287,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476330062914</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ass1&#10; assignment complete (needs slight adjustment to record update)">
+      <created>1476399660529</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1476399660529</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61347000" />
+    <option name="totallyTimeSpent" value="62921000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1922" height="1019" extended-state="6" />
@@ -329,14 +340,15 @@
     <MESSAGE value="Ass1&#10;Req 1-3 complete rev 2" />
     <MESSAGE value="Ass1&#10;added validation for forms" />
     <MESSAGE value="Ass1&#10;almost there,&#10;needs fix on record update (returning 0 records changed)&#10;needs security implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ass1&#10;almost there,&#10;needs fix on record update (returning 0 records changed)&#10;needs security implementation" />
+    <MESSAGE value="Ass1&#10; assignment complete (needs slight adjustment to record update)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ass1&#10; assignment complete (needs slight adjustment to record update)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/validLogin.php</url>
-          <line>25</line>
+          <line>27</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
       </breakpoints>
@@ -666,17 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <marker date="1476398751118" expanded="true" signature="394:441" ph="SELECT * FRO... users" />
-            <marker date="1476398751118" expanded="true" signature="394:465" ph="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/isLoggedIn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -760,6 +761,17 @@
         <state relative-caret-position="90">
           <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
+          <folding>
+            <marker date="1476401015836" expanded="true" signature="437:484" ph="SELECT * FRO... users" />
+            <marker date="1476401015836" expanded="true" signature="437:510" ph="SELECT * FRO... users" />
+          </folding>
         </state>
       </provider>
     </entry>

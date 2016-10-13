@@ -14,7 +14,9 @@
     $userName = mysqli_real_escape_string($db,$userName);
     $userPwd = mysqli_real_escape_string($db,$userPwd);
 
-    $sqlStatement = "SELECT * FROM users WHERE user_name='$userName' and user_pwd='$userPwd'";
+    $hashedPwd = hash("sha512",$userPwd);
+
+    $sqlStatement = "SELECT * FROM users WHERE user_name='$userName' and user_pwd='$hashedPwd'";
 
     $result = mysqli_query($db,$sqlStatement);
 
