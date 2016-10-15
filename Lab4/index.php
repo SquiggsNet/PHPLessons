@@ -30,6 +30,7 @@
             <label>Height:
                 <input name="height" type="text" value="<?php echo $_POST['height']; ?>"/>
             </label>
+
         </fieldset>
         <input type="hidden" name="resize" value="100" />
         <input type="submit" name="submit" value="Calculate"/>
