@@ -3,8 +3,6 @@
     checkIfLoggedIn();
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,6 +11,7 @@
         <style type="text/css">
             table, th, td{
                 border: 1px solid indigo;
+                /*border-collapse: collapse;*/
             }
             button{
                 font-size: 25px;
@@ -187,20 +186,22 @@
                 //Step 3 - Display results for select statement
                 while($row = mysqli_fetch_assoc($result))
                 {
-                    echo "<tr>";
-                    echo "<td>" . $row['emp_no'] . "</td>";
-                    echo "<td>" . $row['birth_date'] . "</td>";
-                    echo "<td>" . $row['first_name'] . "</td>";
-                    echo "<td>" . $row['last_name'] . "</td>";
-                    echo "<td>" . $row['gender'] . "</td>";
-                    echo "<td>" . $row['hire_date'] . "</td>";
-                    echo "<form id='updateEmployee' name='updateEmployee' action='updateEmployeeForm.php'  method='post'>";
-                    echo "<td><button type='submit' name='updateEmployeeID' value=".$row['emp_no']."><i class='fa fa-pencil-square-o'></i></button></td>";
-                    echo "</form>";
-                    echo "<form id='deleteEmployee' name='deleteEmployee' action='executeDeleteEmployee.php'  method='post'>";
-                    echo "<td><button type='submit' name='deleteEmployeeID' value=".$row['emp_no']."><i class='	fa fa-remove'></i></button></td>";
-                    echo "</form>";
-                    echo "</tr>";
+                    ?>
+                    <tr>
+                        <td><?php echo $row['emp_no'] ?></td>
+                        <td><?php echo $row['birth_date'] ?></td>
+                        <td><?php echo $row['first_name'] ?></td>
+                        <td><?php echo $row['last_name'] ?></td>
+                        <td><?php echo $row['gender'] ?></td>
+                        <td><?php echo $row['hire_date'] ?></td>
+                        <form id='updateEmployee' name='updateEmployee' action='updateEmployeeForm.php'  method='post'>
+                          <td><button type='submit' name='updateEmployeeID' value="<?php echo $row['emp_no']?>"><i class='fa fa-pencil-square-o'></i></button></td>
+                        </form>
+                        <form id='deleteEmployee' name='deleteEmployee' action='verifyDeleteEmployee.php'  method='post'>
+                           <td><button type='submit' name='deleteEmployeeID' value="<?php echo $row['emp_no']?>"><i class='	fa fa-remove'></i></button></td>
+                        </form>
+                    </tr>
+                    <?php
                 }
                 mysqli_close($db);
             ?>

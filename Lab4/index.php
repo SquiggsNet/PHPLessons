@@ -5,7 +5,6 @@
     <title>New PHP Page</title>
 </head>
 <body>
-
     <form id="calculate" name="calculate" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
         <fieldset>
             <legend>Circle</legend>
@@ -30,7 +29,6 @@
             <label>Height:
                 <input name="height" type="text" value="<?php echo $_POST['height']; ?>"/>
             </label>
-
         </fieldset>
         <input type="hidden" name="resize" value="100" />
         <input type="submit" name="submit" value="Calculate"/>
@@ -45,7 +43,6 @@
         $myRectangle = new rectangle("Rectangle", $_POST['length'], $_POST['width']);
         $myCircle = new circle("Circle", $_POST['radius']);
         $myTriangle = new triangle("Triangle", $_POST['base'], $_POST['height']);
-
         ?>
         <h3>Results</h3>
         <h2>Shape: <?php echo $myCircle->getName() ?></h2>
@@ -72,7 +69,7 @@
 
         <?php
 
-        if(!empty($_POST['resize'])){
+        if(($_POST['resize'])!=100){
             ?>
 
             <fieldset>
@@ -80,12 +77,6 @@
                 <p>New Area: <?php echo $myCircle->Resize($_POST['resize']) ?></p>
                 <p>New Radius: <?php echo $myCircle->getRadius() ?></p>
             </fieldset>
-<!--            <fieldset>-->
-<!--                <legend>--><?php //echo $myRectangle->getName() ?><!--</legend>-->
-<!--                <p>New Area: --><?php //echo $myRectangle->Resize($_POST['resize']) ?><!--</p>-->
-<!--                <p>New length: --><?php //echo $myRectangle->getLength() ?><!--</p>-->
-<!--                <p>New width: --><?php //echo $myRectangle->getWidth() ?><!--</p>-->
-<!--            </fieldset>-->
             <fieldset>
                 <legend><?php echo $myTriangle->getName() ?></legend>
                 <p>New Area: <?php echo $myTriangle->Resize($_POST['resize']) ?></p>

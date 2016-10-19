@@ -24,7 +24,7 @@ if(!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['b
     $employeeID = $_POST['employeeUpdateID'];
 
 
-    $result = mysqli_query($db,"UPDATE employees SET first_name = '$firstName', last_name = '$lastName' , birth_date = '$birthDate', gender = '$gender', hire_date = '$hireDate' where emp_no = '$updateID'");
+    $result = mysqli_query($db,"UPDATE employees SET first_name = '$firstName', last_name = '$lastName' , birth_date = '$birthDate', gender = '$gender', hire_date = '$hireDate' where emp_no = '$employeeID'");
 
     //Step 3 - Display whether it worked or not
     if(!$result){

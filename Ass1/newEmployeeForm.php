@@ -14,27 +14,27 @@
 <form id="employeeForm" name="employeeForm" action="createNewEmployee.php"  method="post" onsubmit="return validForm()">
     <p>
         <label>First Name
-            <input name="firstName" id="firstName" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/>
+            <input name="firstName" id="firstName" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/><span id="firstWarning"></span>
         </label>
     </p>
     <p>
         <label>Last Name
-            <input name="lastName" id="lastName" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/>
+            <input name="lastName" id="lastName" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/><span id="lastWarning"></span>
         </label>
     </p>
     <p>
         <label>Birth Date
-            <input name="birthDate" id="birthDate" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/>
+            <input name="birthDate" id="birthDate" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/><span id="birthWarning"></span>
         </label>
     </p>
     <p>
         <label>Gender
-            <input name="gender" id="gender" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/>
+            <input name="gender" id="gender" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/><span id="genderWarning"></span>
         </label>
     </p>
     <p>
         <label>Hire Date
-            <input name="hireDate" id="hireDate" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/>
+            <input name="hireDate" id="hireDate" type="text" onFocus="hilightItalicText(this.id)" onBlur="normalText(this.id)" required/><span id="hireWarning"></span>
         </label>
     </p>
     <p>
