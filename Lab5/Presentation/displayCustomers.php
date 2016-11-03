@@ -1,12 +1,8 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customers</title>
+        <title>Actors</title>
         <style type="text/css">
             table
             {
@@ -14,39 +10,39 @@ and open the template in the editor.
             }
             th, td
             {
-               border: 1px solid red;
+               border: 1px solid indigo;
             }
         </style>
     </head>
     <body>
-        <h1>Current Customers:</h1>
+        <h1>Current Actors:</h1>
         <table>
             <thead>
                 <tr>
-                    <td>Customer ID</td>
+                    <td>Actor ID</td>
                     <td>First Name</td>
                     <td>Last Name</td>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    require("../Business/Customer.php");
+                    require("../Business/Actor.php");
 
-                    $arrayOfCustomers = Customer::retrieveSome(0,10);
+                    $arrayOfActors = Actor::retrieveSome(0,10);
 
-                    foreach($arrayOfCustomers as $customer):
+                    foreach($arrayOfActors as $actor):
                         
                     ?>
                         <tr>
-                            <td><?php echo $customer->getID(); ?></td>
-                            <td><?php echo $customer->getFirstName(); ?></td>
-                            <td><?php echo $customer->getLastName(); ?></td>
+                            <td><?php echo $actor->getID(); ?></td>
+                            <td><?php echo $actor->getFirstName(); ?></td>
+                            <td><?php echo $actor->getLastName(); ?></td>
                         </tr>
                     <?php
                     endforeach;
                 ?>
             </tbody>
         </table>
-        <a href="newCustomerForm.html">Add Customer</a>    
+        <a href="newActorForm.html">Add Customer</a>
     </body>
 </html>

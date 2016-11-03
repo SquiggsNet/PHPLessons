@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c98d3ce1-a22c-4961-85fb-f98d91fd3586" name="Default" comment="all up to date">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Data/db/mydb.sqlite" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/.idea/php.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Business/Customer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Business/iBusinessObject.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Data/DataAccessMySQLi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Data/DataAccessPDOMySQL.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Data/DataAccessPDOSQLite.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Data/aDataAccess.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Presentation/displayCustomers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Presentation/insertCustomer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../nTier/Presentation/newCustomerForm.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../nTier/Presentation/displayCustomers.php" afterPath="$PROJECT_DIR$/../Lab5/Presentation/displayCustomers.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../nTier/Presentation/insertCustomer.php" afterPath="$PROJECT_DIR$/../nTier/Presentation/insertCustomer.php" />
     </list>
     <ignored path="Ass1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -326,7 +316,7 @@
       <workItem from="1477310042727" duration="25000" />
       <workItem from="1477655311672" duration="613000" />
       <workItem from="1477859083384" duration="247000" />
-      <workItem from="1478209162470" duration="582000" />
+      <workItem from="1478209162470" duration="630000" />
     </task>
     <task id="LOCAL-00001" summary="Ass1&#10;Req 1-3 complete">
       <created>1475968197786</created>
@@ -381,11 +371,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72090000" />
+    <option name="totallyTimeSpent" value="72138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1922" height="1019" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20260416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

@@ -27,6 +27,6 @@ and open the template in the editor.
             }
         ?>
         <h1><?php echo $result; ?></h1>
-        <a href="displayCustomers.php">Back to Display</a>
+        <a href="../../Lab5/Presentation/displayCustomers.php">Back to Display</a>
     </body>
 </html>
