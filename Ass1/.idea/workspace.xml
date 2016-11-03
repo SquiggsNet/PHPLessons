@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c98d3ce1-a22c-4961-85fb-f98d91fd3586" name="Default" comment="all up to date">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Lab5/Business/Actor.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Lab5/Data/aDataAccess.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../Lab5/Presentation/displayCustomers.php" afterPath="$PROJECT_DIR$/../Lab5/Presentation/displayActors.php" />
     </list>
     <ignored path="Ass1.iws" />
     <ignored path=".idea/workspace.xml" />
