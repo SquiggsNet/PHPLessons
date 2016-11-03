@@ -3,7 +3,7 @@
 require_once '../Business/iBusinessObject.php';         //dgdfgdfggdfg
 require_once '../Data/aDataAccess.php';                 //dgdfgdfggdfg
 
-class Customer implements iBusinessObject
+class Actor implements iBusinessObject
 {
     private $actorId;
     private $firstName;

@@ -25,16 +25,16 @@ abstract class aDataAccess
 
     public abstract function closeDB();
 
-    public abstract function selectCustomers($start,$count);
+    public abstract function selectActors($start,$count);
 
-    public abstract function fetchCustomers();
+    public abstract function fetchActors();
 
-    public abstract function fetchCustomerID($row);
+    public abstract function fetchActorID($row);
 
-    public abstract function fetchCustomerFirstName($row);
+    public abstract function fetchActorFirstName($row);
 
-    public abstract function fetchCustomerLastName($row);
+    public abstract function fetchActorLastName($row);
 
-    public abstract function insertCustomer($firstName,$lastName);
+    public abstract function insertActor($firstName,$lastName);
 }
 ?>

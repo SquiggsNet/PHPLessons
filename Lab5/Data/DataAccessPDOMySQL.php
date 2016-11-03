@@ -69,7 +69,7 @@ class DataAccessPDOMySQL extends aDataAccess
     
     public function fetchActorID($row)
     {
-        return $row['customer_id'];
+        return $row['actor_id'];
     }
 
     public function fetchActorFirstName($row)

@@ -43,6 +43,6 @@
                 ?>
             </tbody>
         </table>
-        <a href="newActorForm.html">Add Customer</a>
+<!--        <a href="newActorForm.html">Add Customer</a>-->
     </body>
 </html>
