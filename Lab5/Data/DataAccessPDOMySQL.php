@@ -86,7 +86,7 @@ class DataAccessPDOMySQL extends aDataAccess
     {
         try
         {
-            $this->stmt = $this->dbConnection->prepare('INSERT INTO actor(store_id,first_name,last_name,address_id) VALUES(1, :firstName, :lastName, 1)');
+            $this->stmt = $this->dbConnection->prepare('INSERT INTO actor(first_name,last_name) VALUES(:firstName, :lastName)');
             $this->stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
             $this->stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
 
