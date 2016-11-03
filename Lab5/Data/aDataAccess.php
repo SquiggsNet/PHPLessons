@@ -25,7 +25,7 @@ abstract class aDataAccess
 
     public abstract function closeDB();
 
-    public abstract function selectActors($start,$count);
+    public abstract function selectActors($start,$count,$search);
 
     public abstract function fetchActors();
 

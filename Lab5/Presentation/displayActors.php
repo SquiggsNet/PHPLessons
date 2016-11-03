@@ -15,7 +15,23 @@
         </style>
     </head>
     <body>
-        <h1>Current Actors:</h1>
+    <?php
+        if(!empty($_POST)) {
+            $userSearch = $_POST['search'];
+        }else{
+            $userSearch = "";
+        }
+    ?>
+        <form id="search" name="search" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
+            <p>
+            <h3>Search First & Last Name From DataBase:</h3>
+            <label>Search:
+                <input name="search" type="text" value="<?php echo $userSearch ?>" />
+            </label>
+            <input type="submit" name="submitSearch" value="Search"/>
+            </p>
+        </form>
+        <h2>Current Actors:</h2>
         <table>
             <thead>
                 <tr>
@@ -28,7 +44,7 @@
                 <?php
                     require("../Business/Actor.php");
 
-                    $arrayOfActors = Actor::retrieveSome(0,10);
+                    $arrayOfActors = Actor::retrieveSome(0,10,$userSearch);
 
                     foreach($arrayOfActors as $actor):
                         

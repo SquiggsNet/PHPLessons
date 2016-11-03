@@ -31,12 +31,12 @@ class Actor implements iBusinessObject
         return ($this->lastName);
     }
 
-    public static function retrieveSome($start,$count)
+    public static function retrieveSome($start,$count, $search)
     {
         $myDataAccess = aDataAccess::getInstance();
         $myDataAccess->connectToDB();
 
-        $myDataAccess->selectActors($start,$count);
+        $myDataAccess->selectActors($start,$count, $search);
 
         while($row = $myDataAccess->fetchActors())
         {

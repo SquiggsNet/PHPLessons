@@ -32,7 +32,7 @@ class DataAccessPDOMySQL extends aDataAccess
         $this->dbConnection = null;
     }
 
-    public function selectActors($start,$count)
+    public function selectActors($start,$count, $search)
     {
        try
        {
@@ -40,8 +40,13 @@ class DataAccessPDOMySQL extends aDataAccess
            /*$this->stmt = $this->dbConnection->prepare('SELECT * FROM customer LIMIT ?,?');
            $this->stmt->bindParam(1, $start, PDO::PARAM_INT);
            $this->stmt->bindParam(2, $count, PDO::PARAM_INT);*/
+            if($search==null){
+                $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor LIMIT :start, :count');
+            }else{
+                $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor WHERE first_name LIKE :search OR last_name LIKE :search LIMIT :start, :count');
+                $this->stmt->bindParam(':search', $search, PDO::PARAM_INT);
+            }
 
-           $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor LIMIT :start, :count');
            $this->stmt->bindParam(':start', $start, PDO::PARAM_INT);
            $this->stmt->bindParam(':count', $count, PDO::PARAM_INT);
 
