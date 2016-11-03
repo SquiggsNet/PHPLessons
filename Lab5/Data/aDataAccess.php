@@ -2,7 +2,7 @@
 
 // So, which database implementation will we use??
 //require_once '../Data/DataAccessMySQLi.php';
-//require_once '../Data/DataAccessPDOMySQL.php';
+require_once '../Data/DataAccessPDOMySQL.php';
 //require_once '../Data/DataAccessPDOSQLite.php';
 
 abstract class aDataAccess
@@ -15,7 +15,7 @@ abstract class aDataAccess
         if(self::$m_DataAccess == null)
         {
             //self::$m_DataAccess = new DataAccessMySQLi();
-            //self::$m_DataAccess = new DataAccessPDOMySQL();
+            self::$m_DataAccess = new DataAccessPDOMySQL();
             //self::$m_DataAccess = new DataAccessPDOSQLite();
         }
         return self::$m_DataAccess;

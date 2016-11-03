@@ -32,7 +32,7 @@ class DataAccessPDOMySQL extends aDataAccess
         $this->dbConnection = null;
     }
 
-    public function selectCustomers($start,$count)
+    public function selectActors($start,$count)
     {
        try
        {
@@ -41,7 +41,7 @@ class DataAccessPDOMySQL extends aDataAccess
            $this->stmt->bindParam(1, $start, PDO::PARAM_INT);
            $this->stmt->bindParam(2, $count, PDO::PARAM_INT);*/
 
-           $this->stmt = $this->dbConnection->prepare('SELECT * FROM customer LIMIT :start, :count');
+           $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor LIMIT :start, :count');
            $this->stmt->bindParam(':start', $start, PDO::PARAM_INT);
            $this->stmt->bindParam(':count', $count, PDO::PARAM_INT);
 
@@ -54,7 +54,7 @@ class DataAccessPDOMySQL extends aDataAccess
     }
     
 
-    public function fetchCustomers()
+    public function fetchActors()
     {
        try
        {
@@ -67,26 +67,26 @@ class DataAccessPDOMySQL extends aDataAccess
        }
     }
     
-    public function fetchCustomerID($row)
+    public function fetchActorID($row)
     {
         return $row['customer_id'];
     }
 
-    public function fetchCustomerFirstName($row)
+    public function fetchActorFirstName($row)
     {
         return $row['first_name'];
     }
 
-    public function fetchCustomerLastName($row)
+    public function fetchActorLastName($row)
     {
         return $row['last_name'];
     }
     
-    public function insertCustomer($firstName,$lastName)
+    public function insertActor($firstName,$lastName)
     {
         try
         {
-            $this->stmt = $this->dbConnection->prepare('INSERT INTO customer(store_id,first_name,last_name,address_id) VALUES(1, :firstName, :lastName, 1)');
+            $this->stmt = $this->dbConnection->prepare('INSERT INTO actor(store_id,first_name,last_name,address_id) VALUES(1, :firstName, :lastName, 1)');
             $this->stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
             $this->stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
 
