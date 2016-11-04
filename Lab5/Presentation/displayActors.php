@@ -59,7 +59,7 @@
                 ?>
             </tbody>
         </table>
-        <form id="deleteActor" name="deleteActor" action="deleteActor.php"  method="post">
+        <form id="deleteActor" name="deleteActor" action="deleteActorForm.php"  method="post">
             <p>
                 <label>ID to Delete:
                     <input name="actorDeleteID" id="actorDeleteID" type="text"/>

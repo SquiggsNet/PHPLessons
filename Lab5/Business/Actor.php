@@ -95,6 +95,21 @@ class Actor implements iBusinessObject
         return "$recordsAffected row(s) affected!";
 
     }
+
+    public function delete($id)
+    {
+        $myDataAccess = aDataAccess::getInstance();
+        $myDataAccess->connectToDB();
+
+        $this->actorId = $id;
+
+        $recordsAffected = $myDataAccess->deleteActor($this->actorId);
+
+        $myDataAccess->closeDB();
+
+        return "$recordsAffected row(s) affected!";
+
+    }
 }
 
 ?>

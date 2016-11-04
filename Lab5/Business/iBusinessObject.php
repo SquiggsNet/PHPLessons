@@ -5,5 +5,6 @@ interface iBusinessObject
     public static function retrieveOne($id);
     public function save();
     public function update($id);
+    public function delete($id);
 }
 ?>

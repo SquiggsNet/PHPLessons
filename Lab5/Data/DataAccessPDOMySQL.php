@@ -43,7 +43,7 @@ class DataAccessPDOMySQL extends aDataAccess
            $this->stmt->bindParam(1, $start, PDO::PARAM_INT);
            $this->stmt->bindParam(2, $count, PDO::PARAM_INT);*/
             if($search==null){
-                $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor ORDER BY actor_id DESC LIMIT :start, :count');
+                $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor LIMIT :start, :count');
             }else{
                 $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor WHERE first_name LIKE :search OR last_name LIKE :search LIMIT :start, :count');
                 $this->stmt->bindParam(':search', $search, PDO::PARAM_STR);
@@ -136,6 +136,24 @@ class DataAccessPDOMySQL extends aDataAccess
             $this->stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $this->stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
             $this->stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+
+            $this->stmt->execute();
+
+            return $this->stmt->rowCount();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not insert record into Sakila Database via PDO: ' . $ex->getMessage());
+        }
+
+    }
+
+    public function deleteActor($id)
+    {
+        try
+        {
+            $this->stmt = $this->dbConnection->prepare('DELETE FROM actor WHERE actor_id = :id');
+            $this->stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
             $this->stmt->execute();
 

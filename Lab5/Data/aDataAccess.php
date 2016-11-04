@@ -40,5 +40,7 @@ abstract class aDataAccess
     public abstract function insertActor($firstName,$lastName);
 
     public abstract function updateActor($id,$firstName,$lastName);
+
+    public abstract function deleteActor($id);
 }
 ?>
