@@ -102,7 +102,22 @@ class DataAccessPDOSQLite extends aDataAccess
     }
 
     public function selectOneActor($id){
-        return;
+        try
+        {
+            // ONE WAY OF DOING A PREPARED STATEMENT
+            /*$this->stmt = $this->dbConnection->prepare('SELECT * FROM customer LIMIT ?,?');
+            $this->stmt->bindParam(1, $start, PDO::PARAM_INT);
+            $this->stmt->bindParam(2, $count, PDO::PARAM_INT);*/
+
+            $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor WHERE actor_id LIKE :id');
+            $this->stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+            $this->stmt->execute();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not select record from Sakila Database via PDO: ' . $ex->getMessage());
+        }
     }
 
     public function updateActor($id,$firstName,$lastName){
