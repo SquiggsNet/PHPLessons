@@ -16,7 +16,7 @@ class DataAccessPDOSQLite extends aDataAccess
     {
         try
         {
-            $this->dbConnection = new PDO("sqlite:/home/inet2005/PhpstormProjects/inet2005-sr/nTier/Data/db/mydb.sqlite");
+            $this->dbConnection = new PDO("sqlite:/home/inet2005/PhpstormProjects/inet2005-sr/Lab5/Data/db/myLiteDb.sqlite");
             $this->dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $ex)
@@ -35,7 +35,12 @@ class DataAccessPDOSQLite extends aDataAccess
     {
         try
         {
-            $this->stmt = $this->dbConnection->prepare('SELECT * FROM customer LIMIT :start, :count');
+            if($search==null){
+                $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor LIMIT :start, :count');
+            }else{
+                $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor WHERE first_name LIKE :search OR last_name LIKE :search LIMIT :start, :count');
+                $this->stmt->bindParam(':search', $search, PDO::PARAM_STR);
+            }
             $this->stmt->bindParam(':start', $start, PDO::PARAM_INT);
             $this->stmt->bindParam(':count', $count, PDO::PARAM_INT);
 
