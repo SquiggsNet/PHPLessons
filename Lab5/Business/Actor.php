@@ -51,12 +51,44 @@ class Actor implements iBusinessObject
         return $arrayOfActorObjects;
     }
 
+    public static function retrieveOne($id)
+    {
+        $myDataAccess = aDataAccess::getInstance();
+        $myDataAccess->connectToDB();
+
+        $myDataAccess->selectOneActor($id);
+
+        $actor = $myDataAccess->fetchActors();
+
+        $actorObject = new self($myDataAccess->fetchActorFirstName($actor), $myDataAccess->fetchActorLastName($actor));
+        $actorObject->actorId = $myDataAccess->fetchActorID($actor);
+
+        $myDataAccess->closeDB();
+
+        return $actorObject;
+    }
+
     public function save()
     {
         $myDataAccess = aDataAccess::getInstance();
         $myDataAccess->connectToDB();
 
         $recordsAffected = $myDataAccess->insertActor($this->firstName,$this->lastName);
+
+        $myDataAccess->closeDB();
+
+        return "$recordsAffected row(s) affected!";
+
+    }
+
+    public function update($id)
+    {
+        $myDataAccess = aDataAccess::getInstance();
+        $myDataAccess->connectToDB();
+
+        $this->actorId = $id;
+
+        $recordsAffected = $myDataAccess->updateActor($this->actorId,$this->firstName,$this->lastName);
 
         $myDataAccess->closeDB();
 

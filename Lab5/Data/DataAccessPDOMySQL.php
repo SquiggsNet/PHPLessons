@@ -36,15 +36,17 @@ class DataAccessPDOMySQL extends aDataAccess
     {
        try
        {
+
+           //ORDER BY actor_id DESC
            // ONE WAY OF DOING A PREPARED STATEMENT
            /*$this->stmt = $this->dbConnection->prepare('SELECT * FROM customer LIMIT ?,?');
            $this->stmt->bindParam(1, $start, PDO::PARAM_INT);
            $this->stmt->bindParam(2, $count, PDO::PARAM_INT);*/
             if($search==null){
-                $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor LIMIT :start, :count');
+                $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor ORDER BY actor_id DESC LIMIT :start, :count');
             }else{
                 $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor WHERE first_name LIKE :search OR last_name LIKE :search LIMIT :start, :count');
-                $this->stmt->bindParam(':search', $search, PDO::PARAM_INT);
+                $this->stmt->bindParam(':search', $search, PDO::PARAM_STR);
             }
 
            $this->stmt->bindParam(':start', $start, PDO::PARAM_INT);
@@ -56,6 +58,26 @@ class DataAccessPDOMySQL extends aDataAccess
        {
            die('Could not select records from Sakila Database via PDO: ' . $ex->getMessage());
        }
+    }
+
+    public function selectOneActor($id)
+    {
+        try
+        {
+            // ONE WAY OF DOING A PREPARED STATEMENT
+            /*$this->stmt = $this->dbConnection->prepare('SELECT * FROM customer LIMIT ?,?');
+            $this->stmt->bindParam(1, $start, PDO::PARAM_INT);
+            $this->stmt->bindParam(2, $count, PDO::PARAM_INT);*/
+
+            $this->stmt = $this->dbConnection->prepare('SELECT * FROM actor WHERE actor_id LIKE :id');
+            $this->stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+            $this->stmt->execute();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not select record from Sakila Database via PDO: ' . $ex->getMessage());
+        }
     }
     
 
@@ -92,6 +114,26 @@ class DataAccessPDOMySQL extends aDataAccess
         try
         {
             $this->stmt = $this->dbConnection->prepare('INSERT INTO actor(first_name,last_name) VALUES(:firstName, :lastName)');
+            $this->stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
+            $this->stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+
+            $this->stmt->execute();
+
+            return $this->stmt->rowCount();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not insert record into Sakila Database via PDO: ' . $ex->getMessage());
+        }
+
+    }
+
+    public function updateActor($id,$firstName,$lastName)
+    {
+        try
+        {
+            $this->stmt = $this->dbConnection->prepare('UPDATE actor set first_name = :firstName, last_name = :lastName WHERE actor_id = :id');
+            $this->stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $this->stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
             $this->stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
 

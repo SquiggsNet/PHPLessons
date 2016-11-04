@@ -6,7 +6,7 @@
         <style type="text/css">
             table
             {
-               border: 1px solid purple;
+               border: 2px solid purple;
             }
             th, td
             {
@@ -59,6 +59,27 @@
                 ?>
             </tbody>
         </table>
+        <form id="deleteActor" name="deleteActor" action="deleteActor.php"  method="post">
+            <p>
+                <label>ID to Delete:
+                    <input name="actorDeleteID" id="actorDeleteID" type="text"/>
+                </label>
+            </p>
+            <p>
+                <input type="submit" name="Delete"/>
+            </p>
+        </form>
+        <form id="updateActor" name="updateActor" action="updateActorForm.php"  method="post">
+            <p>
+                <label>ID to Update:
+                    <input name="actorUpdateID" id="actorUpdateID" type="text"/>
+                </label>
+            </p>
+            <p>
+                <input type="submit" name="Delete"/>
+            </p>
+        </form>
+
         <a href="newActorForm.html">Add an Actor/Actress</a>
     </body>
 </html>

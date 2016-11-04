@@ -27,6 +27,8 @@ abstract class aDataAccess
 
     public abstract function selectActors($start,$count,$search);
 
+    public abstract function selectOneActor($id);
+
     public abstract function fetchActors();
 
     public abstract function fetchActorID($row);
@@ -37,6 +39,6 @@ abstract class aDataAccess
 
     public abstract function insertActor($firstName,$lastName);
 
-    //public abstract function searchActors($searchName);
+    public abstract function updateActor($id,$firstName,$lastName);
 }
 ?>
