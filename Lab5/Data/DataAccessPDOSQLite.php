@@ -121,11 +121,37 @@ class DataAccessPDOSQLite extends aDataAccess
     }
 
     public function updateActor($id,$firstName,$lastName){
-        return;
+        try
+        {
+            $this->stmt = $this->dbConnection->prepare('UPDATE actor set first_name = :firstName, last_name = :lastName WHERE actor_id = :id');
+            $this->stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $this->stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
+            $this->stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+
+            $this->stmt->execute();
+
+            return $this->stmt->rowCount();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not insert record into Sakila Database via PDO: ' . $ex->getMessage());
+        }
     }
 
     public function deleteActor($id){
-        return;
+        try
+        {
+            $this->stmt = $this->dbConnection->prepare('DELETE FROM actor WHERE actor_id = :id');
+            $this->stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+            $this->stmt->execute();
+
+            return $this->stmt->rowCount();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not insert record into Sakila Database via PDO: ' . $ex->getMessage());
+        }
     }
 }
 
