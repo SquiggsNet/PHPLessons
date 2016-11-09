@@ -152,6 +152,26 @@ class PDOMySQLActorDataModel implements iActorDataModel
         }
     }
 
+    public function deleteActor($actorID){
+
+        $deleteStatement = "DELETE FROM actor";
+        $deleteStatement .= " WHERE actor_id = :id";
+        try
+        {
+            $this->stmt = $this->dbConnection->prepare($deleteStatement);
+            $this->stmt->bindParam(':id', $actorID, PDO::PARAM_INT);
+
+            $this->stmt->execute();
+
+            return $this->stmt->rowCount();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not delete record into Sakila Database via PDO: ' . $ex->getMessage());
+        }
+
+    }
+
 }
 
 ?>

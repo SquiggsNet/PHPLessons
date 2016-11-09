@@ -19,6 +19,14 @@ elseif (isset($_POST['InsertBtn']))
 {
     $actController->commitInsertAction($_POST['firstName'],$_POST['lastName']);
 }
+elseif(isset($_GET['idDelete']))
+{
+    $actController->deleteAction($_GET['idDelete']);
+}
+elseif (isset($_POST['DeleteBtn']))
+{
+    $actController->commitDeleteAction($_POST['deleteActorId']);
+}
 else
 {
 

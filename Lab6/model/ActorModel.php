@@ -77,7 +77,16 @@ class ActorModel
 
         $recordsAffected = $this->m_DataAccess->insertActor($fName,$lName);
 
-        return "$recordsAffected record(s) updated succesfully!";
+        return "$recordsAffected record(s) inserted succesfully!";
+    }
+
+    public function deleteActor($actorID)
+    {
+        $this->m_DataAccess->connectToDB();
+
+        $recordsAffected = $this->m_DataAccess->deleteActor($actorID);
+
+        return "$recordsAffected record(s) deleted succesfully!";
     }
 }
 
