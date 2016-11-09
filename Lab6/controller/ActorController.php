@@ -11,9 +11,9 @@ class ActorController
         $this->model = new ActorModel();
     }
     
-    public function displayAction()
+    public function displayAction($actorSearch)
     {
-        $arrayOfActors = $this->model->getAllActors();
+        $arrayOfActors = $this->model->getAllActors($actorSearch);
 
         include '../view/displayActors.php';
     }
@@ -36,12 +36,26 @@ class ActorController
 
         $lastOperationResults = $this->model->updateActor($currentActor);
 
-        $arrayOfActors = $this->model->getAllActors();
+        $arrayOfActors = $this->model->getAllActors("");
 
         include '../view/displayActors.php';
     }
 
+    public function insertAction()
+    {
+        include '../view/insertActor.php';
+    }
 
+    public function commitInsertAction($fName,$lName)
+    {
+        $lastOperationResults = "";
+
+        $lastOperationResults = $this->model->insertActor($fName,$lName);
+
+        $arrayOfActors = $this->model->getAllActors("");
+
+        include '../view/displayActors.php';
+    }
 }
 
 ?>

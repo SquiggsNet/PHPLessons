@@ -32,13 +32,16 @@ class PDOMySQLActorDataModel implements iActorDataModel
         $this->dbConnection = null;
     }
 
-    public function selectActors()
+    public function selectActors($actorSearch)
     {
         // hard-coding for first ten rows
         $start = 0;
         $count = 10;
 
         $selectStatement = "SELECT * FROM actor";
+        if($actorSearch!=null){
+            $selectStatement .= " WHERE first_name LIKE :search OR last_name LIKE :search";
+        }
         $selectStatement .= " LIMIT :start,:count;";
 
         try
@@ -46,7 +49,9 @@ class PDOMySQLActorDataModel implements iActorDataModel
             $this->stmt = $this->dbConnection->prepare($selectStatement );
             $this->stmt->bindParam(':start', $start, PDO::PARAM_INT);
             $this->stmt->bindParam(':count', $count, PDO::PARAM_INT);
-
+            if($actorSearch!=null){
+                $this->stmt->bindParam(':search', $actorSearch, PDO::PARAM_STR);
+            }
             $this->stmt->execute();
         }
         catch(PDOException $ex)
@@ -124,6 +129,27 @@ class PDOMySQLActorDataModel implements iActorDataModel
     public function fetchActorLastName($row)
     {
        return $row['last_name'];
+    }
+
+    public function insertActor($fName, $lName)
+    {
+
+        $insertStatement = "INSERT INTO actor";
+        $insertStatement .= " (first_name,last_name) VALUES(:firstName, :lastName)";
+        try
+        {
+            $this->stmt = $this->dbConnection->prepare($insertStatement);
+            $this->stmt->bindParam(':firstName', $fName, PDO::PARAM_STR);
+            $this->stmt->bindParam(':lastName', $lName, PDO::PARAM_STR);
+
+            $this->stmt->execute();
+
+            return $this->stmt->rowCount();
+        }
+        catch(PDOException $ex)
+        {
+            die('Could not insert record into Sakila Database via PDO: ' . $ex->getMessage());
+        }
     }
 
 }

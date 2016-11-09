@@ -20,13 +20,13 @@ class ActorModel
         // not doing anything at the moment
     }
             
-    public function getAllActors()
+    public function getAllActors($actorSearch)
     {
         $this->m_DataAccess->connectToDB();
         
         $arrayofActorObjects = array();
         
-        $this->m_DataAccess->selectActors();
+        $this->m_DataAccess->selectActors($actorSearch);
         
         while($row =  $this->m_DataAccess->fetchActors())
         {
@@ -68,6 +68,15 @@ class ActorModel
                 $actorToUpdate->getFirstName(),
                 $actorToUpdate->getLastName());
         
+        return "$recordsAffected record(s) updated succesfully!";
+    }
+
+    public function insertActor($fName,$lName)
+    {
+        $this->m_DataAccess->connectToDB();
+
+        $recordsAffected = $this->m_DataAccess->insertActor($fName,$lName);
+
         return "$recordsAffected record(s) updated succesfully!";
     }
 }

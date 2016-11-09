@@ -11,10 +11,24 @@ if(isset($_GET['idUpdate']))
 elseif (isset($_POST['UpdateBtn']))
 {
     $actController->commitUpdateAction($_POST['editActorId'],$_POST['firstName'],$_POST['lastName']);
+}else if(isset($_GET['insertActor']))
+{
+    $actController->insertAction();
+}
+elseif (isset($_POST['InsertBtn']))
+{
+    $actController->commitInsertAction($_POST['firstName'],$_POST['lastName']);
 }
 else
 {
-    $actController->displayAction();
+
+    if(!empty($_POST['search'])) {
+        $userSearch = $_POST['search'];
+    }else{
+        $userSearch = "";
+    }
+
+    $actController->displayAction($userSearch);
 }
 
 ?>

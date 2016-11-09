@@ -55,6 +55,29 @@ and open the template in the editor.
                 ?>
             </tbody>
             <tfoot></tfoot>
-        </table>  
+        </table>
+        <hr>
+        <?php
+        if(!empty($_POST['search'])) {
+            $userSearch = $_POST['search'];
+        }else{
+            $userSearch = "";
+        }
+        ?>
+        <form id="search" name="search" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
+            <p>
+            <h3>Search First & Last Name From DataBase:</h3>
+            <label>Search:
+                <input name="search" type="text" value="<?php echo $userSearch ?>" />
+            </label>
+            <input type="submit" name="submitSearch" value="Search"/>
+            </p>
+        </form>
+        <hr>
+
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>?insertActor=">
+            Add an Actor/Actress
+        </a>
+
     </body>
 </html>
