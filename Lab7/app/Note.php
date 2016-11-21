@@ -8,8 +8,23 @@ class Note extends Model
 {
     protected $fillable = ['body'];
 
-//    public function card()
-//    {
-//        return $this->belongsTo(Card::class);
-//    }
+    public function by(User $user)
+    {
+        $this->user_id = $user->id;
+    }
+
+    public function path()
+    {
+        return '/notes/' . $this->id . '/edit';
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function card()
+    {
+        return $this->belongsTo(Card::class);
+    }
 }
