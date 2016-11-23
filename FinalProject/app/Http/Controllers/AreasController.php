@@ -30,7 +30,7 @@ class AreasController extends Controller
      */
     public function create()
     {
-
+        return view('areas.create');
     }
 
     /**
@@ -41,7 +41,16 @@ class AreasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $area = Areas::create([
+            'name' => $request['name'],
+            'alias' => $request['alias'],
+            'displayOrder' => (int)$request['displayOrder'],
+            'description' => $request['description']
+        ]);
+        $area->save();
+
+        $areas = Areas::all();
+        return view('areas.index', compact('areas'));
     }
 
     /**
