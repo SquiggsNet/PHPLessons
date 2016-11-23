@@ -27,5 +27,8 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ action( 'PagesController@create') }}">
+            Create a New Page
+        </a>
     </div>
 @endsection

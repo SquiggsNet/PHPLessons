@@ -30,7 +30,7 @@ class PagesController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.create');
     }
 
     /**
@@ -42,6 +42,16 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         //
+        //talk to model
+        $page = Pages::create([
+                'name' => $request['name'],
+                'alias' => $request['alias'],
+                'description' => $request['description']
+            ]);
+        $page->save();
+
+        $pages = Pages::all();
+        return view('pages.index', compact('pages'));
     }
 
     /**

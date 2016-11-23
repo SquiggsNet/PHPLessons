@@ -157,9 +157,10 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
-         * Third-Party Providers
+         * Third-Party and extra Providers
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class, // Laravel IDE helper
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -207,6 +208,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*
+         * Third-party and extra aliases
+         */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
