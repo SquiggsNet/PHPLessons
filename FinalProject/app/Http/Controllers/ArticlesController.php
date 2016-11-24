@@ -31,7 +31,7 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
@@ -42,7 +42,21 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = Articles::create([
+            'name' => $request['name'],
+            'title' => $request['title'],
+            'page' => (int)$request['page'],
+            'allPages' => (bool)$request['allPages'],
+            'description' => $request['description'],
+            'contentArea' => $request['contentArea'],
+            'htmlSnippet' => $request['htmlSnippet'],
+            'area_id' => (int)$request['area_id'],
+            'page_id' => (int)$request['page_id']
+        ]);
+        $article->save();
+
+        $articles = Articles::all();
+        return view('articles.index', compact('articles'));
     }
 
     /**

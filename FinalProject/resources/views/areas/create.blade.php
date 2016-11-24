@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('displayOrder', 'Display Order') !!}
-                {!! Form::text('displayOrder',null ,['class'=>'form-control']) !!}
+                {!! Form::number('displayOrder',null ,['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('description', 'Description') !!}

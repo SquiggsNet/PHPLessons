@@ -39,5 +39,8 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ action( 'ArticlesController@create') }}">
+            Create a New Area
+        </a>
     </div>
 @endsection
