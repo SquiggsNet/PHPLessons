@@ -50,8 +50,7 @@ class PagesController extends Controller
             ]);
         $page->save();
 
-        $pages = Pages::all();
-        return view('pages.index', compact('pages'));
+        return redirect()->action('PagesController@index');
     }
 
     /**
@@ -77,7 +76,8 @@ class PagesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $page = Pages::find($id);
+        return view('pages.edit', compact('page'));
     }
 
     /**
@@ -89,7 +89,13 @@ class PagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $page = Pages::find($id);
+        $page->name = $request['name'];
+        $page->alias = $request['alias'];
+        $page->description = $request['description'];
+        $page->save();
+
+        return redirect()->action('PagesController@index');
     }
 
     /**

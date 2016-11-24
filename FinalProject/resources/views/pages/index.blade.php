@@ -10,6 +10,8 @@
                     <th>Name</th>
                     <th>Alias</th>
                     <th>Description</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +25,10 @@
                         <td>{{$page->name}}</td>
                         <td>{{$page->alias}}</td>
                         <td>{{$page->description}}</td>
+                        <td><a href="{{ action( 'PagesController@edit', ['id' => $page->id]) }}">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a></td>
+                        <td></td>
                     </tr>
                 @endforeach
             </tbody>
