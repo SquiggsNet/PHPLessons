@@ -11,6 +11,8 @@
                     <th>Alias</th>
                     <th>Display Order</th>
                     <th>Description</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +27,10 @@
                         <td>{{$area->alias}}</td>
                         <td>{{$area->displayOrder}}</td>
                         <td>{{$area->description}}</td>
+                        <td><a href="{{ action( 'AreasController@edit', ['id' => $area->id]) }}">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a></td>
+                        <td></td>
                     </tr>
                 @endforeach
             </tbody>

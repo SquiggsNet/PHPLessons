@@ -49,8 +49,7 @@ class AreasController extends Controller
         ]);
         $area->save();
 
-        $areas = Areas::all();
-        return view('areas.index', compact('areas'));
+        return redirect()->action('AreasController@index');
     }
 
     /**
@@ -76,7 +75,8 @@ class AreasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $area = Areas::find($id);
+        return view('areas.edit', compact('area'));
     }
 
     /**
@@ -88,7 +88,14 @@ class AreasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $area = Areas::find($id);
+        $area->name = $request['name'];
+        $area->alias = $request['alias'];
+        $area->displayOrder = (int)$request['displayOrder'];
+        $area->description = $request['description'];
+        $area->save();
+
+        return redirect()->action('AreasController@index');
     }
 
     /**
