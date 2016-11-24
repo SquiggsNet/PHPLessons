@@ -22,9 +22,12 @@ class CreateArticlesTable extends Migration
             $table->text('contentArea');
             $table->string('htmlSnippet');
             $table->timestamps();
-            $table->integer('area_id');
-            $table->integer('page_id');
+            $table->integer('area_id')->unsigned();
+            $table->integer('page_id')->unsigned();
 
+            //foreign key constraints
+            $table->foreign('page_id')->references('id')->on('pages');
+            $table->foreign('area_id')->references('id')->on('areas');
         });
     }
 

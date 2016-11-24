@@ -11,10 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         $this->call(PageTableSeeder::class);
         $this->call(AreaTableSeeder::class);
-        $this->call(StyleTemplateTableSeeder::class);
         $this->call(ArticleTableSeeder::class);
+        $this->call(StyleTemplateTableSeeder::class);
     }
 }
 
@@ -90,14 +91,14 @@ class StyleTemplateTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('style_Templates')->insert([
+        DB::table('style_templates')->insert([
             'name' => "First Style Template",
             'description' => "This is the description to the first style created.",
             'content' => "this css here makes the pages look gooooood.",
             'activeState' => 1
         ]);
 
-        DB::table('style_Templates')->insert([
+        DB::table('style_templates')->insert([
             'name' => "Second Style Template",
             'description' => "This is the description to the second style created.",
             'content' => "this css here makes the pages look even better than the last!",
