@@ -27,10 +27,20 @@
                         <td>{{$styleTemplate->description}}</td>
                         <td>{{$styleTemplate->content}}</td>
                         <td>{{$styleTemplate->activeState}}</td>
-                        <td><a href="{{ action( 'StyleTemplateController@edit', ['id' => $styleTemplate->id]) }}">
+                        <td>
+                            {{ Form::open(['action' => ['StyleTemplateController@edit', $styleTemplate], 'method' => 'get']) }}
+                            <button type="submit" >
                                 <span class="glyphicon glyphicon-pencil"></span>
-                            </a></td>
-                        <td></td>
+                            </button>
+                            {{ Form::close() }}
+                        </td>
+                        <td>
+                            {{ Form::open(['action' => ['StyleTemplateController@destroy', $styleTemplate], 'method' => 'delete']) }}
+                            <button type="submit" >
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                            {{ Form::close() }}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

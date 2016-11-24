@@ -107,6 +107,8 @@ class StyleTemplateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $styleTemplate = StyleTemplate::find($id);
+        $styleTemplate->delete();
+        return redirect()->action('StyleTemplateController@index');
     }
 }
