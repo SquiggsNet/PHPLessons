@@ -30,7 +30,7 @@ class StyleTemplateController extends Controller
      */
     public function create()
     {
-        //
+        return view('styleTemplates.create');
     }
 
     /**
@@ -41,7 +41,16 @@ class StyleTemplateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $styleTemplate = StyleTemplate::create([
+            'name' => $request['name'],
+            'description' => $request['description'],
+            'content' => $request['content'],
+            'activeState' => (bool)$request['activeState'],
+        ]);
+        $styleTemplate->save();
+
+        $styleTemplates = StyleTemplate::all();
+        return view('styleTemplates.index', compact('styleTemplates'));
     }
 
     /**

@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class StyleTemplate extends Model
 {
-    //
+    protected $fillable = array('name', 'description', 'content', 'activeState');
+
 }

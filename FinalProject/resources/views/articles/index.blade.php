@@ -40,7 +40,7 @@
             </tbody>
         </table>
         <a href="{{ action( 'ArticlesController@create') }}">
-            Create a New Area
+            Create a New Article
         </a>
     </div>
 @endsection

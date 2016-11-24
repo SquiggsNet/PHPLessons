@@ -29,5 +29,8 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ action( 'StyleTemplateController@create') }}">
+            Create a New Stylesheet Template
+        </a>
     </div>
 @endsection
