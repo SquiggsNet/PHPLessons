@@ -37,10 +37,20 @@
                         <td>{{$article->htmlSnippet}}</td>
                         <td>{{$article->area_id}}</td>
                         <td>{{$article->page_id}}</td>
-                        <td><a href="{{ action( 'ArticlesController@edit', ['id' => $article->id]) }}">
+                        <td>
+                            {{ Form::open(['action' => ['ArticlesController@edit', $article], 'method' => 'get']) }}
+                            <button type="submit" >
                                 <span class="glyphicon glyphicon-pencil"></span>
-                            </a></td>
-                        <td></td>
+                            </button>
+                            {{ Form::close() }}
+                        </td>
+                        <td>
+                            {{ Form::open(['action' => ['ArticlesController@destroy', $article], 'method' => 'delete']) }}
+                            <button type="submit" >
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                            {{ Form::close() }}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
