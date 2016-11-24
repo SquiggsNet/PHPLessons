@@ -27,10 +27,20 @@
                         <td>{{$area->alias}}</td>
                         <td>{{$area->displayOrder}}</td>
                         <td>{{$area->description}}</td>
-                        <td><a href="{{ action( 'AreasController@edit', ['id' => $area->id]) }}">
+                        <td>
+                            {{ Form::open(['action' => ['AreasController@edit', $area], 'method' => 'get']) }}
+                            <button type="submit" >
                                 <span class="glyphicon glyphicon-pencil"></span>
-                            </a></td>
-                        <td></td>
+                            </button>
+                            {{ Form::close() }}
+                        </td>
+                        <td>
+                            {{ Form::open(['action' => ['AreasController@destroy', $area], 'method' => 'delete']) }}
+                            <button type="submit" >
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                            {{ Form::close() }}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
