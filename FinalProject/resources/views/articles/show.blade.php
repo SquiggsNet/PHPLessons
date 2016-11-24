@@ -10,8 +10,8 @@
         <p>Description: {{$article->description}}</p>
         <p>Content Area: {{$article->contentArea}}</p>
         <p>HTML Snippet: {{$article->htmlSnippet}}</p>
-        <p>Area ID:{{$article->area_id}}</p>
-        <p>Page ID:{{$article->page_id}}</p>
+        <p>Area ID:{{$article->areas_id}}</p>
+        <p>Page ID:{{$article->pages_id}}</p>
 
 
         <a href="{{ action( 'ArticlesController@index') }}">

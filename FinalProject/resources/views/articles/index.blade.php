@@ -35,8 +35,8 @@
                         <td>{{$article->description}}</td>
                         <td>{{$article->contentArea}}</td>
                         <td>{{$article->htmlSnippet}}</td>
-                        <td>{{$article->area_id}}</td>
-                        <td>{{$article->page_id}}</td>
+                        <td>{{$article->areas_id}}</td>
+                        <td>{{$article->pages_id}}</td>
                         <td>
                             {{ Form::open(['action' => ['ArticlesController@edit', $article], 'method' => 'get']) }}
                             <button type="submit" >

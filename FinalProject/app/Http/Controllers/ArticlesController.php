@@ -50,8 +50,8 @@ class ArticlesController extends Controller
             'description' => $request['description'],
             'contentArea' => $request['contentArea'],
             'htmlSnippet' => $request['htmlSnippet'],
-            'area_id' => (int)$request['area_id'],
-            'page_id' => (int)$request['page_id']
+            'areas_id' => (int)$request['areas_id'],
+            'pages_id' => (int)$request['pages_id']
         ]);
         $article->save();
 
@@ -103,8 +103,8 @@ class ArticlesController extends Controller
         $article->description = $request['description'];
         $article->contentArea = $request['contentArea'];
         $article->htmlSnippet = $request['htmlSnippet'];
-        $article->area_id = (int)$request['area_id'];
-        $article->page_id = (int)$request['page_id'];
+        $article->areas_id = (int)$request['areas_id'];
+        $article->pages_id = (int)$request['pages_id'];
         $article->save();
 
         return redirect()->action('ArticlesController@index');

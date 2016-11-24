@@ -22,12 +22,12 @@ class CreateArticlesTable extends Migration
             $table->text('contentArea');
             $table->string('htmlSnippet');
             $table->timestamps();
-            $table->integer('area_id')->unsigned();
-            $table->integer('page_id')->unsigned();
+            $table->integer('areas_id')->unsigned();
+            $table->integer('pages_id')->unsigned();
 
             //foreign key constraints
-            $table->foreign('page_id')->references('id')->on('pages');
-            $table->foreign('area_id')->references('id')->on('areas');
+            $table->foreign('pages_id')->references('id')->on('pages');
+            $table->foreign('areas_id')->references('id')->on('areas');
         });
     }
 

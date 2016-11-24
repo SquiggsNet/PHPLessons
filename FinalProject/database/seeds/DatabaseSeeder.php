@@ -69,8 +69,8 @@ class ArticleTableSeeder extends Seeder
             'description' => "First article generation time generated.",
             'contentArea' => "Well look, what a delightful first article we have here.",
             'htmlSnippet' => "good looking html right there",
-            'area_id' => 1,
-            'page_id' => 1,
+            'areas_id' => 1,
+            'pages_id' => 1,
         ]);
 
         DB::table('articles')->insert([
@@ -81,8 +81,8 @@ class ArticleTableSeeder extends Seeder
             'description' => "Second article generation time generated. here we go again",
             'contentArea' => "what a pretty second article. it should get one of Bob Ross' happy little cabins.",
             'htmlSnippet' => "more good looking html right there",
-            'area_id' => 2,
-            'page_id' => 2,
+            'areas_id' => 2,
+            'pages_id' => 2,
         ]);
     }
 }

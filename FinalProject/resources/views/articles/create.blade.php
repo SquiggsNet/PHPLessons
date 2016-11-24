@@ -34,12 +34,12 @@
                 {!! Form::text('htmlSnippet',null ,['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('area_id', 'Area ID') !!}
-                {!! Form::number('area_id',null ,['class'=>'form-control']) !!}
+                {!! Form::label('areas_id', 'Area ID') !!}
+                {!! Form::number('areas_id',null ,['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('page_id', 'Page ID') !!}
-                {!! Form::number('page_id',null ,['class'=>'form-control']) !!}
+                {!! Form::label('pages_id', 'Page ID') !!}
+                {!! Form::number('pages_id',null ,['class'=>'form-control']) !!}
             </div>
             {!! Form::submit('Add',['class'=>'btn btn-default']) !!}
         {!! Form::close() !!}
