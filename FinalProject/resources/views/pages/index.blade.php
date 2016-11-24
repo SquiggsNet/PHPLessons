@@ -25,10 +25,20 @@
                         <td>{{$page->name}}</td>
                         <td>{{$page->alias}}</td>
                         <td>{{$page->description}}</td>
-                        <td><a href="{{ action( 'PagesController@edit', ['id' => $page->id]) }}">
+                        <td>
+                            {{ Form::open(['action' => ['PagesController@edit', $page], 'method' => 'get']) }}
+                            <button type="submit" >
                                 <span class="glyphicon glyphicon-pencil"></span>
-                            </a></td>
-                        <td></td>
+                            </button>
+                            {{ Form::close() }}
+                        </td>
+                        <td>
+                            {{ Form::open(['action' => ['PagesController@destroy', $page], 'method' => 'delete']) }}
+                            <button type="submit" >
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                            {{ Form::close() }}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
