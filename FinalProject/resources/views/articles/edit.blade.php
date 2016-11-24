@@ -18,7 +18,7 @@
 
             <div class="form-group">
                 {!! Form::label('allPages', 'All Pages') !!}
-                {!! Form::checkbox('allPages',null ,['class'=>'form-control']) !!}
+                {!! Form::checkbox('allPages') !!}
             </div>
 
             <div class="form-group">

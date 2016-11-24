@@ -49,8 +49,7 @@ class StyleTemplateController extends Controller
         ]);
         $styleTemplate->save();
 
-        $styleTemplates = StyleTemplate::all();
-        return view('styleTemplates.index', compact('styleTemplates'));
+        return redirect()->action('StyleTemplateController@index');
     }
 
     /**
@@ -76,7 +75,8 @@ class StyleTemplateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $styleTemplate = StyleTemplate::find($id);
+        return view('styleTemplates.edit', compact('styleTemplate'));
     }
 
     /**
@@ -88,7 +88,15 @@ class StyleTemplateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $styleTemplate = StyleTemplate::find($id);
+        $styleTemplate->name = $request['name'];
+        $styleTemplate->description = $request['description'];
+        $styleTemplate->content = $request['content'];
+        $styleTemplate->activeState = (bool)$request['activeState'];
+
+        $styleTemplate->save();
+
+        return redirect()->action('StyleTemplateController@index');
     }
 
     /**

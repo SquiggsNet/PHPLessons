@@ -11,6 +11,8 @@
                     <th>Description</th>
                     <th>Content</th>
                     <th>Active State</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +27,10 @@
                         <td>{{$styleTemplate->description}}</td>
                         <td>{{$styleTemplate->content}}</td>
                         <td>{{$styleTemplate->activeState}}</td>
+                        <td><a href="{{ action( 'StyleTemplateController@edit', ['id' => $styleTemplate->id]) }}">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a></td>
+                        <td></td>
                     </tr>
                 @endforeach
             </tbody>
