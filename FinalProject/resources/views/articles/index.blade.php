@@ -16,6 +16,8 @@
                     <th>HTML Snippet</th>
                     <th>Area ID</th>
                     <th>Page ID</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +37,10 @@
                         <td>{{$article->htmlSnippet}}</td>
                         <td>{{$article->area_id}}</td>
                         <td>{{$article->page_id}}</td>
+                        <td><a href="{{ action( 'ArticlesController@edit', ['id' => $article->id]) }}">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a></td>
+                        <td></td>
                     </tr>
                 @endforeach
             </tbody>

@@ -3,7 +3,6 @@
 @section('content')
     <div class="container">
         {!! Form::model($area, ['action' => ['AreasController@update', $area], 'method' => 'put']) !!}
-        {!! Form::open(['action' => 'AreasController@store' ]) !!}
             <div class="form-group">
                 {!! Form::label('name', 'Name') !!}
                 {!! Form::text('name',null ,['class'=>'form-control'])!!}

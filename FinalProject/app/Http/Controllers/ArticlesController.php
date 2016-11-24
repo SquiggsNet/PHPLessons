@@ -55,8 +55,7 @@ class ArticlesController extends Controller
         ]);
         $article->save();
 
-        $articles = Articles::all();
-        return view('articles.index', compact('articles'));
+        return redirect()->action('ArticlesController@index');
     }
 
     /**
@@ -83,7 +82,8 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Articles::find($id);
+        return view('articles.edit', compact('article'));
     }
 
     /**
@@ -95,7 +95,19 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $article = Articles::find($id);
+        $article->name = $request['name'];
+        $article->title = $request['title'];
+        $article->page = (int)$request['page'];
+        $article->allPages = (bool)$request['allPages'];
+        $article->description = $request['description'];
+        $article->contentArea = $request['contentArea'];
+        $article->htmlSnippet = $request['htmlSnippet'];
+        $article->area_id = (int)$request['area_id'];
+        $article->page_id = (int)$request['page_id'];
+        $article->save();
+
+        return redirect()->action('ArticlesController@index');
     }
 
     /**
