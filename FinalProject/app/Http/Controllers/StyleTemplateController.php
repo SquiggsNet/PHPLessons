@@ -12,7 +12,7 @@ class StyleTemplateController extends Controller
 
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('editor');
     }
     /**
      * Display a listing of the resource.

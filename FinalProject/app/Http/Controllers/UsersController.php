@@ -5,15 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Areas;
+use App\User;
+use Hash;
 
-class AreasController extends Controller
+class UsersController extends Controller
 {
     public function __construct()
     {
         $this->middleware('admin');
-        $this->middleware('author');
-        $this->middleware('editor');
     }
     /**
      * Display a listing of the resource.
@@ -23,10 +22,10 @@ class AreasController extends Controller
     public function index()
     {
         //talk to model
-        $areas = Areas::all();
+        $users = User::all();
 
         //pick view to display
-        return view('areas.index', compact('areas'));
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -36,7 +35,7 @@ class AreasController extends Controller
      */
     public function create()
     {
-        return view('areas.create');
+        return view('users.create');
     }
 
     /**
@@ -47,15 +46,15 @@ class AreasController extends Controller
      */
     public function store(Request $request)
     {
-        $area = Areas::create([
-            'name' => $request['name'],
-            'alias' => $request['alias'],
-            'displayOrder' => (int)$request['displayOrder'],
-            'description' => $request['description']
+        $users = User::create([
+            'first_name' => $request['first_name'],
+            'last_name' => $request['last_name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password'])
         ]);
-        $area->save();
+        $users->save();
 
-        return redirect()->action('AreasController@index');
+        return redirect()->action('UsersController@index');
     }
 
     /**
@@ -67,10 +66,10 @@ class AreasController extends Controller
     public function show($id)
     {
         //talk to model
-        $area = Areas::find($id);
+        $user = User::find($id);
 
         //pick view to display
-        return view('areas.show', compact('area'));
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -81,8 +80,8 @@ class AreasController extends Controller
      */
     public function edit($id)
     {
-        $area = Areas::find($id);
-        return view('areas.edit', compact('area'));
+        $user = User::find($id);
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -94,14 +93,14 @@ class AreasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $area = Areas::find($id);
-        $area->name = $request['name'];
-        $area->alias = $request['alias'];
-        $area->displayOrder = (int)$request['displayOrder'];
-        $area->description = $request['description'];
-        $area->save();
+        $users = User::find($id);
+        $users->first_name = $request['first_name'];
+        $users->last_name = $request['last_name'];
+        $users->email = $request['email'];
+        $users->password = Hash::make($request['password']);
+        $users->save();
 
-        return redirect()->action('AreasController@index');
+        return redirect()->action('UsersController@index');
     }
 
     /**
@@ -112,8 +111,8 @@ class AreasController extends Controller
      */
     public function destroy($id)
     {
-        $area = Areas::find($id);
-        $area->delete();
-        return redirect()->action('AreasController@index');
+        $users = User::find($id);
+        $users->delete();
+        return redirect()->action('UsersController@index');
     }
 }

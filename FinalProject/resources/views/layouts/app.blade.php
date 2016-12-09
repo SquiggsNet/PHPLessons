@@ -52,6 +52,7 @@
                     <li><a href="{{ url('/areas') }}">Areas</a></li>
                     <li><a href="{{ url('/articles') }}">Articles</a></li>
                     <li><a href="{{ url('/styleTemplates') }}">Styles</a></li>
+                    <li><a href="{{ url('/users') }}">Users</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

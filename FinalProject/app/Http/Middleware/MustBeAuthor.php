@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class MustBeAdministrator
+class MustBeAuthor
 {
     /**
      * Handle an incoming request.
@@ -20,15 +20,15 @@ class MustBeAdministrator
 
         if($user){
 
-            $admin = false;
+            $author = false;
             $count = $user->userPriv->count();
             for($i = 0 ;$i < $count;$i++){
-                if($user->userPriv[$i]->privilege_id == 1){
-                    $admin = true;
+                if($user->userPriv[$i]->privilege_id == 2){
+                    $author = true;
                 }
             }
 
-            if($admin) {
+            if($author) {
 
                 return $next($request);
             }
@@ -38,7 +38,7 @@ class MustBeAdministrator
 //            return redirect()->guest('login');
 //        }
 
-        abort(403, 'You must be an administrator to access this location.');
+        abort(403, 'You must be an author to access this location.');
 
     }
 }

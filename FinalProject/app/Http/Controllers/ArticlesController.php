@@ -12,7 +12,7 @@ class ArticlesController extends Controller
 
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('author');
     }
 
     /**

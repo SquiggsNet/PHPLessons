@@ -73,12 +73,17 @@ class UserPrivTableSeeder extends Seeder
     {
         DB::table('user_privs')->insert([
             'user_id' => 1,
+            'privilege_id' => 1,
+        ]);
+
+        DB::table('user_privs')->insert([
+            'user_id' => 1,
             'privilege_id' => 2,
         ]);
 
         DB::table('user_privs')->insert([
             'user_id' => 1,
-            'privilege_id' => 1,
+            'privilege_id' => 3,
         ]);
 
         DB::table('user_privs')->insert([

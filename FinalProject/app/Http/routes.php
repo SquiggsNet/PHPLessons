@@ -19,6 +19,8 @@ Route::group(['middleware'=>'web'], function(){
 
     Route::get('/home', 'HomeController@index');
 
+    Route::resource('users', 'UsersController');
+
     Route::resource('areas', 'AreasController');
 
     Route::resource('styleTemplates', 'StyleTemplateController');

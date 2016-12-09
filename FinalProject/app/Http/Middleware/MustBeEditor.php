@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class MustBeAdministrator
+class MustBeEditor
 {
     /**
      * Handle an incoming request.
@@ -20,25 +20,29 @@ class MustBeAdministrator
 
         if($user){
 
-            $admin = false;
+            $editor = false;
             $count = $user->userPriv->count();
             for($i = 0 ;$i < $count;$i++){
-                if($user->userPriv[$i]->privilege_id == 1){
-                    $admin = true;
+                if($user->userPriv[$i]->privilege_id == 3){
+                    $editor = true;
                 }
             }
 
-            if($admin) {
+            if($editor) {
 
                 return $next($request);
             }
 
         }
+
+        //if($user && $user->isAdmin){                  /// change for proper priveliges
+        if ($user && $editor) {
+            return $next($request);
+        }
 //        else if($user){                   //create wrong user response (use flash)
 //            return redirect()->guest('login');
 //        }
 
-        abort(403, 'You must be an administrator to access this location.');
-
+        abort(403, 'You must be an editor to access this location.');
     }
 }
