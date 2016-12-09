@@ -1,28 +1,31 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware'=>'web'], function(){
+
+    Route::get('begin', function(){
+
+       return Redirect::to('/');
+    });
+
+    Route::get('/', function () {
+        flash('You are now signed in!');
+        //flash('You are now signed in!', 'alert-success');
+        //flash('You are now signed in!', 'alert-danger');
+        return view('welcome');
+    });
+
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+
+    Route::resource('areas', 'AreasController');
+
+    Route::resource('styleTemplates', 'StyleTemplateController');
+
+    Route::resource('articles', 'ArticlesController');
+
+    Route::resource('pages', 'PagesController');
+
 });
 
-Route::resource('pages', 'PagesController');
-
-Route::resource('areas', 'AreasController');
-
-Route::resource('styleTemplates', 'StyleTemplateController');
-
-Route::resource('articles', 'ArticlesController');
-
-Route::auth();
-
-Route::get('/home', 'HomeController@index');

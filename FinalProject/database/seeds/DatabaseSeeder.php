@@ -11,11 +11,85 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        $this->call(UserTableSeeder::class);
+        $this->call(PrivilegeTableSeeder::class);
+        $this->call(UserPrivTableSeeder::class);
         $this->call(PageTableSeeder::class);
         $this->call(AreaTableSeeder::class);
         $this->call(ArticleTableSeeder::class);
         $this->call(StyleTemplateTableSeeder::class);
+
+    }
+}
+
+class UserTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('users')->insert([
+            'first_name' => "Scott",
+            'last_name' => "Rafael",
+            'email' => "w0218584@nscc.ca",
+            'password' => Hash::make("password")
+        ]);
+
+        DB::table('users')->insert([
+            'first_name' => "Squiggs",
+            'last_name' => "Net",
+            'email' => "squiggs.rafael@gmail.com",
+            'password' => Hash::make("password")
+        ]);
+
+        DB::table('users')->insert([
+            'first_name' => "Squiggington",
+            'last_name' => "Net",
+            'email' => "e@mail.com",
+            'password' => Hash::make("password")
+        ]);
+    }
+}
+
+class PrivilegeTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('privileges')->insert([
+            'description' => "Administrator"
+        ]);
+
+        DB::table('privileges')->insert([
+            'description' => "Author"
+        ]);
+
+        DB::table('privileges')->insert([
+            'description' => "Editor"
+        ]);
+    }
+}
+
+class UserPrivTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('user_privs')->insert([
+            'user_id' => 1,
+            'privilege_id' => 2,
+        ]);
+
+        DB::table('user_privs')->insert([
+            'user_id' => 1,
+            'privilege_id' => 1,
+        ]);
+
+        DB::table('user_privs')->insert([
+            'user_id' => 2,
+            'privilege_id' => 2,
+        ]);
+
+        DB::table('user_privs')->insert([
+            'user_id' => 3,
+            'privilege_id' => 3,
+        ]);
     }
 }
 

@@ -10,6 +10,10 @@
                     <th>Name</th>
                     <th>Alias</th>
                     <th>Description</th>
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Updated By</th>
+                    <th>Updated Date</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -25,6 +29,10 @@
                         <td>{{$page->name}}</td>
                         <td>{{$page->alias}}</td>
                         <td>{{$page->description}}</td>
+                        <td>{{$page->created_by}}</td>
+                        <td>{{$page->created_at}}</td>
+                        <td>{{$page->updated_by}}</td>
+                        <td>{{$page->updated_at}}</td>
                         <td>
                             {{ Form::open(['action' => ['PagesController@edit', $page], 'method' => 'get']) }}
                             <button type="submit" >
