@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Areas extends Model
 {
-    protected $fillable = array('name', 'alias', 'displayOrder','description');
+    protected $fillable = array('name', 'alias', 'displayOrder','description','created_by' ,'updated_by');
 
     public function articles()
     {

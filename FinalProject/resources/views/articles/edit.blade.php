@@ -12,11 +12,6 @@
                 {!! Form::text('title',null ,['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('page', 'Page') !!}
-                {!! Form::number('page',null ,['class'=>'form-control']) !!}
-            </div>
-
-            <div class="form-group">
                 {!! Form::label('allPages', 'All Pages') !!}
                 {!! Form::checkbox('allPages') !!}
             </div>
@@ -24,10 +19,6 @@
             <div class="form-group">
                 {!! Form::label('description', 'Description') !!}
                 {!! Form::text('description',null ,['class'=>'form-control']) !!}
-            </div>
-            <div class="form-group">
-                {!! Form::label('contentArea', 'Content Area') !!}
-                {!! Form::text('contentArea',null ,['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('htmlSnippet', 'HTML Snippet') !!}

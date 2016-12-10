@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Pages;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -13,8 +14,8 @@ class PagesController extends Controller
 
     public function __construct()
     {
-        $this->middleware('admin');
-        $this->middleware('author');
+//        $this->middleware('admin');
+//        $this->middleware('author');
         $this->middleware('editor');
     }
     /**
@@ -49,12 +50,15 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = Auth::id();
+
         //talk to model
         $page = Pages::create([
                 'name' => $request['name'],
                 'alias' => $request['alias'],
-                'description' => $request['description']
+                'description' => $request['description'],
+                'created_by' => $id,
+                'updated_by' => $id
             ]);
         $page->save();
 
@@ -97,10 +101,13 @@ class PagesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $userId = Auth::id();
+
         $page = Pages::find($id);
         $page->name = $request['name'];
         $page->alias = $request['alias'];
         $page->description = $request['description'];
+        $page->updated_by = $userId;
         $page->save();
 
         return redirect()->action('PagesController@index');

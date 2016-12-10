@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Articles;
+use Illuminate\Support\Facades\Auth;
+
 
 class ArticlesController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('author');
+        $this->middleware('editor');
     }
 
     /**
@@ -48,16 +50,18 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
+        $id = Auth::id();
+
         $article = Articles::create([
             'name' => $request['name'],
             'title' => $request['title'],
-            'page' => (int)$request['page'],
             'allPages' => (bool)$request['allPages'],
             'description' => $request['description'],
-            'contentArea' => $request['contentArea'],
             'htmlSnippet' => $request['htmlSnippet'],
             'areas_id' => (int)$request['areas_id'],
-            'pages_id' => (int)$request['pages_id']
+            'pages_id' => (int)$request['pages_id'],
+            'created_by' => $id,
+            'updated_by' => $id
         ]);
         $article->save();
 
@@ -101,16 +105,17 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $userId = Auth::id();
+
         $article = Articles::find($id);
         $article->name = $request['name'];
         $article->title = $request['title'];
-        $article->page = (int)$request['page'];
         $article->allPages = (bool)$request['allPages'];
         $article->description = $request['description'];
-        $article->contentArea = $request['contentArea'];
         $article->htmlSnippet = $request['htmlSnippet'];
         $article->areas_id = (int)$request['areas_id'];
         $article->pages_id = (int)$request['pages_id'];
+        $article->updated_by = $userId;
         $article->save();
 
         return redirect()->action('ArticlesController@index');

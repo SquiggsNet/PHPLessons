@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Privileges extends Model
 {
 
-    protected $fillable = array('description');
+    protected $fillable = array('description','created_by' ,'updated_by');
     //
 
     public function userPriv()

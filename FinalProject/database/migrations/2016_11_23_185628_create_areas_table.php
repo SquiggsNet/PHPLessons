@@ -19,6 +19,12 @@ class CreateAreasTable extends Migration
             $table->integer('displayOrder');
             $table->text('description');
             $table->timestamps();
+            $table->integer('created_by')->unsigned();
+            $table->integer('updated_by')->unsigned();
+
+            //foreign key constraints
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('updated_by')->references('id')->on('users');
         });
     }
 

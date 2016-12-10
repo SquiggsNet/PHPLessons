@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Areas;
+use Illuminate\Support\Facades\Auth;
 
 class AreasController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin');
-        $this->middleware('author');
         $this->middleware('editor');
+
     }
     /**
      * Display a listing of the resource.
@@ -47,11 +47,15 @@ class AreasController extends Controller
      */
     public function store(Request $request)
     {
+        $id = Auth::id();
+
         $area = Areas::create([
             'name' => $request['name'],
             'alias' => $request['alias'],
             'displayOrder' => (int)$request['displayOrder'],
-            'description' => $request['description']
+            'description' => $request['description'],
+            'created_by' => $id,
+            'updated_by' => $id
         ]);
         $area->save();
 
@@ -94,11 +98,14 @@ class AreasController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $userId = Auth::id();
+
         $area = Areas::find($id);
         $area->name = $request['name'];
         $area->alias = $request['alias'];
         $area->displayOrder = (int)$request['displayOrder'];
         $area->description = $request['description'];
+        $area->updated_by = $userId;
         $area->save();
 
         return redirect()->action('AreasController@index');

@@ -19,6 +19,12 @@ class CreateStyleTemplatesTable extends Migration
             $table->text('content');
             $table->boolean('activeState');
             $table->timestamps();
+            $table->integer('created_by')->unsigned();
+            $table->integer('updated_by')->unsigned();
+
+            //foreign key constraints
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('updated_by')->references('id')->on('users');
         });
     }
 

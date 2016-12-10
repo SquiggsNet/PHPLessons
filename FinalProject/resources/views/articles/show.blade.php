@@ -12,7 +12,10 @@
         <p>HTML Snippet: {{$article->htmlSnippet}}</p>
         <p>Area ID:{{$article->areas_id}}</p>
         <p>Page ID:{{$article->pages_id}}</p>
-
+        <p>Created By: {{$article->created_by}}</p>
+        <p>Creation Date: {{$article->created_at}}</p>
+        <p>Update By: {{$article->updated_by}}</p>
+        <p>Updated Date: {{$article->updated_at}}</p>
 
         <a href="{{ action( 'ArticlesController@index') }}">
             Go Back

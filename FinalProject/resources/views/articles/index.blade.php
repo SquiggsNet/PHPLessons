@@ -9,13 +9,15 @@
                     <th>Article ID</th>
                     <th>Name</th>
                     <th>Title</th>
-                    <th>page</th>
                     <th>allPages</th>
                     <th>Description</th>
-                    <th>Content Area</th>
                     <th>HTML Snippet</th>
                     <th>Area ID</th>
                     <th>Page ID</th>
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Updated By</th>
+                    <th>Updated Date</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -30,13 +32,15 @@
                         </td>
                         <td>{{$article->name}}</td>
                         <td>{{$article->title}}</td>
-                        <td>{{$article->page}}</td>
                         <td>{{$article->allPages}}</td>
                         <td>{{$article->description}}</td>
-                        <td>{{$article->contentArea}}</td>
                         <td>{{$article->htmlSnippet}}</td>
                         <td>{{$article->areas_id}}</td>
                         <td>{{$article->pages_id}}</td>
+                        <td>{{$article->created_by}}</td>
+                        <td>{{$article->created_at}}</td>
+                        <td>{{$article->updated_by}}</td>
+                        <td>{{$article->updated_at}}</td>
                         <td>
                             {{ Form::open(['action' => ['ArticlesController@edit', $article], 'method' => 'get']) }}
                             <button type="submit" >

@@ -11,6 +11,10 @@
                     <th>Description</th>
                     <th>Content</th>
                     <th>Active State</th>
+                    <th>Created By</th>
+                    <th>Created Date</th>
+                    <th>Updated By</th>
+                    <th>Updated Date</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -27,6 +31,10 @@
                         <td>{{$styleTemplate->description}}</td>
                         <td>{{$styleTemplate->content}}</td>
                         <td>{{$styleTemplate->activeState}}</td>
+                        <td>{{$styleTemplate->created_by}}</td>
+                        <td>{{$styleTemplate->created_at}}</td>
+                        <td>{{$styleTemplate->updated_by}}</td>
+                        <td>{{$styleTemplate->updated_at}}</td>
                         <td>
                             {{ Form::open(['action' => ['StyleTemplateController@edit', $styleTemplate], 'method' => 'get']) }}
                             <button type="submit" >

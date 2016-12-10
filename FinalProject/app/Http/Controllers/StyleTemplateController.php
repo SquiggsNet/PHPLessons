@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\StyleTemplate;
+use Illuminate\Support\Facades\Auth;
 
 class StyleTemplateController extends Controller
 {
@@ -46,11 +47,15 @@ class StyleTemplateController extends Controller
      */
     public function store(Request $request)
     {
+        $id = Auth::id();
+
         $styleTemplate = StyleTemplate::create([
             'name' => $request['name'],
             'description' => $request['description'],
             'content' => $request['content'],
             'activeState' => (bool)$request['activeState'],
+            'created_by' => $id,
+            'updated_by' => $id
         ]);
         $styleTemplate->save();
 
@@ -93,12 +98,14 @@ class StyleTemplateController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $userId = Auth::id();
+
         $styleTemplate = StyleTemplate::find($id);
         $styleTemplate->name = $request['name'];
         $styleTemplate->description = $request['description'];
         $styleTemplate->content = $request['content'];
         $styleTemplate->activeState = (bool)$request['activeState'];
-
+        $styleTemplate->updated_by = $userId;
         $styleTemplate->save();
 
         return redirect()->action('StyleTemplateController@index');

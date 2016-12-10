@@ -21,6 +21,10 @@ Route::group(['middleware'=>'web'], function(){
 
     Route::resource('users', 'UsersController');
 
+    Route::resource('privileges', 'PrivilegesController');
+
+    Route::resource('userPrivs', 'UserPrivsController');
+
     Route::resource('areas', 'AreasController');
 
     Route::resource('styleTemplates', 'StyleTemplateController');

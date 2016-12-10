@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pages extends Model
 {
-    protected $fillable = array('name', 'alias', 'description');
+    protected $fillable = array('name', 'alias', 'description','created_by' ,'updated_by' );
 
 //    public function users()
 //    {

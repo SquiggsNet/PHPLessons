@@ -2,14 +2,11 @@
 
 @section('content')
     <div class="container">
-        <h1>Areas:</h1>
+        <h1>Privileges</h1>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Area ID</th>
-                    <th>Name</th>
-                    <th>Alias</th>
-                    <th>Display Order</th>
+                    <th>Privilege ID</th>
                     <th>Description</th>
                     <th>Created By</th>
                     <th>Created Date</th>
@@ -20,30 +17,27 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($areas as $area)
+                @foreach ($privileges as $privilege)
                     <tr>
                         <td>
-                            <a href="{{ action( 'AreasController@show', ['id' => $area->id]) }}">
-                                {{$area->id}}
+                            <a href="{{ action( 'PrivilegesController@show', ['id' => $privilege->id]) }}">
+                                {{$privilege->id}}
                             </a>
                         </td>
-                        <td>{{$area->name}}</td>
-                        <td>{{$area->alias}}</td>
-                        <td>{{$area->displayOrder}}</td>
-                        <td>{{$area->description}}</td>
-                        <td>{{$area->created_by}}</td>
-                        <td>{{$area->created_at}}</td>
-                        <td>{{$area->updated_by}}</td>
-                        <td>{{$area->updated_at}}</td>
+                        <td>{{$privilege->description}}</td>
+                        <td>{{$privilege->created_by}}</td>
+                        <td>{{$privilege->created_at}}</td>
+                        <td>{{$privilege->updated_by}}</td>
+                        <td>{{$privilege->updated_at}}</td>
                         <td>
-                            {{ Form::open(['action' => ['AreasController@edit', $area], 'method' => 'get']) }}
+                            {{ Form::open(['action' => ['PrivilegesController@edit', $privilege], 'method' => 'get']) }}
                             <button type="submit" >
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                             {{ Form::close() }}
                         </td>
                         <td>
-                            {{ Form::open(['action' => ['AreasController@destroy', $area], 'method' => 'delete']) }}
+                            {{ Form::open(['action' => ['PrivilegesController@destroy', $privilege], 'method' => 'delete']) }}
                             <button type="submit" >
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
@@ -53,8 +47,8 @@
                 @endforeach
             </tbody>
         </table>
-        <a href="{{ action( 'AreasController@create') }}">
-            Create a New Area
+        <a href="{{ action( 'PrivilegesController@create') }}">
+            Create a New Privelege
         </a>
     </div>
 @endsection

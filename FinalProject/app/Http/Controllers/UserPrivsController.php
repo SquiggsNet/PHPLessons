@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\User;
+use App\UserPriv;
 use Illuminate\Support\Facades\Auth;
-use Hash;
 
-class UsersController extends Controller
+class UserPrivsController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('admin');
+//        $this->middleware('author');
+//        $this->middleware('editor');
     }
     /**
      * Display a listing of the resource.
@@ -23,10 +25,10 @@ class UsersController extends Controller
     public function index()
     {
         //talk to model
-        $users = User::all();
+        $userPrivs = UserPriv::all();
 
         //pick view to display
-        return view('users.index', compact('users'));
+        return view('userPrivs.index', compact('userPrivs'));
     }
 
     /**
@@ -36,7 +38,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('userPrivs.create');
     }
 
     /**
@@ -48,18 +50,16 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $id = Auth::id();
-
-        $users = User::create([
-            'first_name' => $request['first_name'],
-            'last_name' => $request['last_name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
+        //talk to model
+        $userPriv = UserPriv::create([
+            'user_id' => $request['user_id'],
+            'privilege_id' => $request['privilege_id'],
             'created_by' => $id,
             'updated_by' => $id
         ]);
-        $users->save();
+        $userPriv->save();
 
-        return redirect()->action('UsersController@index');
+        return redirect()->action('UserPrivsController@index');
     }
 
     /**
@@ -71,10 +71,10 @@ class UsersController extends Controller
     public function show($id)
     {
         //talk to model
-        $user = User::find($id);
+        $userPriv = UserPriv::find($id);
 
         //pick view to display
-        return view('users.show', compact('user'));
+        return view('userPrivs.show', compact('userPriv'));
     }
 
     /**
@@ -85,8 +85,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('users.edit', compact('user'));
+        $userPriv = UserPriv::find($id);
+        return view('userPrivs.edit', compact('userPriv'));
     }
 
     /**
@@ -100,15 +100,13 @@ class UsersController extends Controller
     {
         $userId = Auth::id();
 
-        $users = User::find($id);
-        $users->first_name = $request['first_name'];
-        $users->last_name = $request['last_name'];
-        $users->email = $request['email'];
-        $users->password = Hash::make($request['password']);
-        $users->updated_by = $userId;
-        $users->save();
+        $userPriv = UserPriv::find($id);
+        $userPriv->user_id = $request['user_id'];
+        $userPriv->privilege_id = $request['privilege_id'];
+        $userPriv->updated_by = $userId;
+        $userPriv->save();
 
-        return redirect()->action('UsersController@index');
+        return redirect()->action('UserPrivsController@index');
     }
 
     /**
@@ -119,8 +117,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $users = User::find($id);
-        $users->delete();
-        return redirect()->action('UsersController@index');
+        $userPriv = UserPriv::find($id);
+        $userPriv->delete();
+        return redirect()->action('UserPrivsController@index');
     }
 }

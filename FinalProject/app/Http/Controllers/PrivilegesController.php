@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\User;
+use App\Privileges;
 use Illuminate\Support\Facades\Auth;
-use Hash;
 
-class UsersController extends Controller
+class PrivilegesController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('admin');
+//        $this->middleware('author');
+//        $this->middleware('editor');
     }
     /**
      * Display a listing of the resource.
@@ -23,10 +25,10 @@ class UsersController extends Controller
     public function index()
     {
         //talk to model
-        $users = User::all();
+        $privileges = Privileges::all();
 
         //pick view to display
-        return view('users.index', compact('users'));
+        return view('privileges.index', compact('privileges'));
     }
 
     /**
@@ -36,7 +38,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('privileges.create');
     }
 
     /**
@@ -49,17 +51,17 @@ class UsersController extends Controller
     {
         $id = Auth::id();
 
-        $users = User::create([
-            'first_name' => $request['first_name'],
-            'last_name' => $request['last_name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
+        //talk to model
+        $privileges = Privileges::create([
+            'name' => $request['name'],
+            'alias' => $request['alias'],
+            'description' => $request['description'],
             'created_by' => $id,
             'updated_by' => $id
         ]);
-        $users->save();
+        $privileges->save();
 
-        return redirect()->action('UsersController@index');
+        return redirect()->action('PrivilegesController@index');
     }
 
     /**
@@ -71,10 +73,10 @@ class UsersController extends Controller
     public function show($id)
     {
         //talk to model
-        $user = User::find($id);
+        $privilege = Privileges::find($id);
 
         //pick view to display
-        return view('users.show', compact('user'));
+        return view('privileges.show', compact('privilege'));
     }
 
     /**
@@ -85,8 +87,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('users.edit', compact('user'));
+        $privilege = Privileges::find($id);
+        return view('privileges.edit', compact('privilege'));
     }
 
     /**
@@ -100,15 +102,12 @@ class UsersController extends Controller
     {
         $userId = Auth::id();
 
-        $users = User::find($id);
-        $users->first_name = $request['first_name'];
-        $users->last_name = $request['last_name'];
-        $users->email = $request['email'];
-        $users->password = Hash::make($request['password']);
-        $users->updated_by = $userId;
-        $users->save();
+        $privileges = Privileges::find($id);
+        $privileges->description = $request['description'];
+        $privileges->updated_by = $userId;
+        $privileges->save();
 
-        return redirect()->action('UsersController@index');
+        return redirect()->action('PrivilegesController@index');
     }
 
     /**
@@ -119,8 +118,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $users = User::find($id);
-        $users->delete();
-        return redirect()->action('UsersController@index');
+        $privileges = Privileges::find($id);
+        $privileges->delete();
+        return redirect()->action('PrivilegesController@index');
     }
 }

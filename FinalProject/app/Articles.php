@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Articles extends Model
 {
-    protected $fillable = array('name', 'title', 'page', 'allPages','description', 'contentArea', 'htmlSnippet', 'areas_id', 'pages_id');
+    protected $fillable = array('name', 'title', 'allPages','description', 'htmlSnippet', 'areas_id', 'pages_id','created_by' ,'updated_by' );
 
     public function pages()
     {
